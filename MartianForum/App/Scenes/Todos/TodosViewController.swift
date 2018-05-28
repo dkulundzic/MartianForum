@@ -1,0 +1,60 @@
+//
+//  TodosViewController.swift
+//  MartianForum
+//
+//  Created by Domagoj Kulundzic on 28/05/2018.
+//  Copyright © 2018 Codeopolis. All rights reserved.
+//
+
+import UIKit
+
+protocol TodosDisplayLogic: class {
+  
+}
+
+class TodosViewController: UIViewController {
+  var interactor: TodosBusinessLogic?
+  var router: TodosRoutingLogic?
+  private let contentView = TodosContentView.autolayoutView()
+  
+  init(delegate: TodosRouterDelegate?) {
+    super.init(nibName: nil, bundle: nil)
+    let interactor = TodosInteractor()
+    let presenter = TodosPresenter()
+    let router = TodosRouter()
+    interactor.presenter = presenter
+    presenter.viewController = self
+    router.viewController = self
+    router.delegate = delegate
+    self.interactor = interactor
+    self.router = router
+    setupView()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    // call update constraints method
+  }
+}
+
+// MARK: - Display Logic
+extension TodosViewController: TodosDisplayLogic {
+  
+}
+
+// MARK: - Private Methods
+private extension TodosViewController {
+  func setupView() {
+    // setup title, background, navigation buttons, etc
+    setupContentView()
+  }
+  
+  func setupContentView() {
+    view.addSubview(contentView)
+    // add constraints
+  }
+}
