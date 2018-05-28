@@ -11,12 +11,23 @@
 		48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */; };
 		48836FE020BC5D8600BDC99E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCB20BC5D8600BDC99E /* Info.plist */; };
 		48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCC20BC5D8600BDC99E /* Assets.xcassets */; };
-		48836FE220BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCF20BC5D8600BDC99E /* .gitkeep */; };
-		48836FE320BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD120BC5D8600BDC99E /* .gitkeep */; };
-		48836FE420BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD320BC5D8600BDC99E /* .gitkeep */; };
-		48836FE520BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD520BC5D8600BDC99E /* .gitkeep */; };
-		48836FE620BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD720BC5D8600BDC99E /* .gitkeep */; };
 		489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489EA99320BC5A1100A39B77 /* MartianForumTests.swift */; };
+		48F4DC3C20BC739700ACAB5E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48F4DC3920BC739700ACAB5E /* .gitkeep */; };
+		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
+		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
+		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
+		48F4DC4C20BC769A00ACAB5E /* UIBarButtonItem-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4720BC769A00ACAB5E /* UIBarButtonItem-Martian.swift */; };
+		48F4DC4D20BC769A00ACAB5E /* UICollectionView-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4820BC769A00ACAB5E /* UICollectionView-Martian.swift */; };
+		48F4DC4E20BC769A00ACAB5E /* UIFont-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4920BC769A00ACAB5E /* UIFont-Martian.swift */; };
+		48F4DC4F20BC769A00ACAB5E /* UIView-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4A20BC769A00ACAB5E /* UIView-Martian.swift */; };
+		48F4DC5020BC769A00ACAB5E /* UITableView-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4B20BC769A00ACAB5E /* UITableView-Martian.swift */; };
+		48F4DC5220BC773400ACAB5E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5120BC773400ACAB5E /* Logger.swift */; };
+		48F4DC5420BC775C00ACAB5E /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5320BC775C00ACAB5E /* LogLevel.swift */; };
+		48F4DC5720BC77A200ACAB5E /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5620BC77A200ACAB5E /* ReusableView.swift */; };
+		48F4DC5C20BC77EF00ACAB5E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5920BC77EF00ACAB5E /* Environment.swift */; };
+		48F4DC5D20BC77EF00ACAB5E /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5A20BC77EF00ACAB5E /* URLs.swift */; };
+		48F4DC5E20BC77EF00ACAB5E /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5B20BC77EF00ACAB5E /* Animations.swift */; };
+		48F4DC6020BC781500ACAB5E /* URL-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC5F20BC781500ACAB5E /* URL-Martian.swift */; };
 		6EFF71BCDF43CE1664B9B5E1 /* Pods_MartianForum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBDB11283BF1D16E73CFD6 /* Pods_MartianForum.framework */; };
 		EB2564D1065F2DF8332BAA4B /* Pods_MartianForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF44CDA3EEE51C5EADB459E3 /* Pods_MartianForumTests.framework */; };
 /* End PBXBuildFile section */
@@ -38,15 +49,26 @@
 		48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48836FCB20BC5D8600BDC99E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48836FCC20BC5D8600BDC99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		48836FCF20BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		48836FD120BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		48836FD320BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		48836FD520BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		48836FD720BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		489EA97B20BC5A1000A39B77 /* MartianForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MartianForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489EA98F20BC5A1100A39B77 /* MartianForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MartianForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489EA99320BC5A1100A39B77 /* MartianForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianForumTests.swift; sourceTree = "<group>"; };
 		489EA99520BC5A1100A39B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F4DC3920BC739700ACAB5E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4720BC769A00ACAB5E /* UIBarButtonItem-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4820BC769A00ACAB5E /* UICollectionView-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4920BC769A00ACAB5E /* UIFont-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4A20BC769A00ACAB5E /* UIView-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC4B20BC769A00ACAB5E /* UITableView-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView-Martian.swift"; sourceTree = "<group>"; };
+		48F4DC5120BC773400ACAB5E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		48F4DC5320BC775C00ACAB5E /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		48F4DC5620BC77A200ACAB5E /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		48F4DC5920BC77EF00ACAB5E /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		48F4DC5A20BC77EF00ACAB5E /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		48F4DC5B20BC77EF00ACAB5E /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		48F4DC5F20BC781500ACAB5E /* URL-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL-Martian.swift"; sourceTree = "<group>"; };
 		4AEBDB11283BF1D16E73CFD6 /* Pods_MartianForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MartianForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF4A76E39A6627C9BB0221 /* Pods-MartianForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum.release.xcconfig"; sourceTree = "<group>"; };
 		A8C34FE5F79D32D19F3F3C46 /* Pods-MartianForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,8 +116,8 @@
 		48836FC320BC5D8600BDC99E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				48836FCC20BC5D8600BDC99E /* Assets.xcassets */,
 				48836FC420BC5D8600BDC99E /* Storyboards */,
-				48836FC720BC5D8600BDC99E /* Resources */,
 				48836FCA20BC5D8600BDC99E /* Other */,
 			);
 			path = Resources;
@@ -109,14 +131,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		48836FC720BC5D8600BDC99E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				48836FCC20BC5D8600BDC99E /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		48836FCA20BC5D8600BDC99E /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,62 +139,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		48836FCD20BC5D8600BDC99E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				48836FCE20BC5D8600BDC99E /* UI */,
-				48836FD020BC5D8600BDC99E /* UIKit */,
-				48836FD220BC5D8600BDC99E /* Foundation */,
-				48836FD420BC5D8600BDC99E /* Utilities */,
-				48836FD620BC5D8600BDC99E /* System */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		48836FCE20BC5D8600BDC99E /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				48836FCF20BC5D8600BDC99E /* .gitkeep */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		48836FD020BC5D8600BDC99E /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				48836FD120BC5D8600BDC99E /* .gitkeep */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		48836FD220BC5D8600BDC99E /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				48836FD320BC5D8600BDC99E /* .gitkeep */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		48836FD420BC5D8600BDC99E /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				48836FD520BC5D8600BDC99E /* .gitkeep */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		48836FD620BC5D8600BDC99E /* System */ = {
-			isa = PBXGroup;
-			children = (
-				48836FD720BC5D8600BDC99E /* .gitkeep */,
-			);
-			path = System;
-			sourceTree = "<group>";
-		};
 		48836FD820BC5D8600BDC99E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				48836FCD20BC5D8600BDC99E /* Extensions */,
+				48F4DC3D20BC739D00ACAB5E /* Extensions */,
+				48F4DC3820BC739700ACAB5E /* System */,
+				48F4DC3620BC739600ACAB5E /* UI */,
+				48F4DC5820BC77E000ACAB5E /* Config */,
+				48F4DC3420BC739600ACAB5E /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -212,6 +178,81 @@
 				489EA99520BC5A1100A39B77 /* Info.plist */,
 			);
 			path = MartianForumTests;
+			sourceTree = "<group>";
+		};
+		48F4DC3420BC739600ACAB5E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC5120BC773400ACAB5E /* Logger.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		48F4DC3620BC739600ACAB5E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC5520BC779800ACAB5E /* Protocols */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		48F4DC3820BC739700ACAB5E /* System */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC3920BC739700ACAB5E /* .gitkeep */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		48F4DC3D20BC739D00ACAB5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC4020BC73C900ACAB5E /* UIKit */,
+				48F4DC3F20BC73C400ACAB5E /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48F4DC3F20BC73C400ACAB5E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC5F20BC781500ACAB5E /* URL-Martian.swift */,
+				48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */,
+				48F4DC4320BC765F00ACAB5E /* String-Martian.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		48F4DC4020BC73C900ACAB5E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */,
+				48F4DC4720BC769A00ACAB5E /* UIBarButtonItem-Martian.swift */,
+				48F4DC4820BC769A00ACAB5E /* UICollectionView-Martian.swift */,
+				48F4DC4B20BC769A00ACAB5E /* UITableView-Martian.swift */,
+				48F4DC4920BC769A00ACAB5E /* UIFont-Martian.swift */,
+				48F4DC4A20BC769A00ACAB5E /* UIView-Martian.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		48F4DC5520BC779800ACAB5E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC5620BC77A200ACAB5E /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		48F4DC5820BC77E000ACAB5E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				48F4DC5B20BC77EF00ACAB5E /* Animations.swift */,
+				48F4DC5920BC77EF00ACAB5E /* Environment.swift */,
+				48F4DC5A20BC77EF00ACAB5E /* URLs.swift */,
+				48F4DC5320BC775C00ACAB5E /* LogLevel.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		8BFA50BE4E5EE7AADF152A68 /* Frameworks */ = {
@@ -319,14 +360,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48836FE520BC5D8600BDC99E /* .gitkeep in Resources */,
-				48836FE620BC5D8600BDC99E /* .gitkeep in Resources */,
 				48836FE020BC5D8600BDC99E /* Info.plist in Resources */,
-				48836FE320BC5D8600BDC99E /* .gitkeep in Resources */,
 				48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */,
+				48F4DC3C20BC739700ACAB5E /* .gitkeep in Resources */,
 				48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */,
-				48836FE420BC5D8600BDC99E /* .gitkeep in Resources */,
-				48836FE220BC5D8600BDC99E /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +452,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F4DC4F20BC769A00ACAB5E /* UIView-Martian.swift in Sources */,
+				48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */,
+				48F4DC4C20BC769A00ACAB5E /* UIBarButtonItem-Martian.swift in Sources */,
+				48F4DC5D20BC77EF00ACAB5E /* URLs.swift in Sources */,
+				48F4DC5720BC77A200ACAB5E /* ReusableView.swift in Sources */,
+				48F4DC4D20BC769A00ACAB5E /* UICollectionView-Martian.swift in Sources */,
+				48F4DC5420BC775C00ACAB5E /* LogLevel.swift in Sources */,
+				48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */,
+				48F4DC5220BC773400ACAB5E /* Logger.swift in Sources */,
+				48F4DC5C20BC77EF00ACAB5E /* Environment.swift in Sources */,
+				48F4DC4E20BC769A00ACAB5E /* UIFont-Martian.swift in Sources */,
+				48F4DC5E20BC77EF00ACAB5E /* Animations.swift in Sources */,
 				48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */,
+				48F4DC6020BC781500ACAB5E /* URL-Martian.swift in Sources */,
+				48F4DC5020BC769A00ACAB5E /* UITableView-Martian.swift in Sources */,
+				48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
