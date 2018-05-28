@@ -1,0 +1,666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48836FC220BC5D8600BDC99E /* AppDelegate.swift */; };
+		48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */; };
+		48836FE020BC5D8600BDC99E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCB20BC5D8600BDC99E /* Info.plist */; };
+		48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCC20BC5D8600BDC99E /* Assets.xcassets */; };
+		48836FE220BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCF20BC5D8600BDC99E /* .gitkeep */; };
+		48836FE320BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD120BC5D8600BDC99E /* .gitkeep */; };
+		48836FE420BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD320BC5D8600BDC99E /* .gitkeep */; };
+		48836FE520BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD520BC5D8600BDC99E /* .gitkeep */; };
+		48836FE620BC5D8600BDC99E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 48836FD720BC5D8600BDC99E /* .gitkeep */; };
+		489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489EA99320BC5A1100A39B77 /* MartianForumTests.swift */; };
+		6EFF71BCDF43CE1664B9B5E1 /* Pods_MartianForum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEBDB11283BF1D16E73CFD6 /* Pods_MartianForum.framework */; };
+		EB2564D1065F2DF8332BAA4B /* Pods_MartianForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF44CDA3EEE51C5EADB459E3 /* Pods_MartianForumTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		489EA99020BC5A1100A39B77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 489EA97320BC5A1000A39B77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 489EA97A20BC5A1000A39B77;
+			remoteInfo = MartianForum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12338E65777B1E001985E489 /* Pods-MartianForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum.debug.xcconfig"; sourceTree = "<group>"; };
+		156D9AF33124ABB1E714C93D /* Pods-MartianForumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		48836FC220BC5D8600BDC99E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48836FCB20BC5D8600BDC99E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48836FCC20BC5D8600BDC99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48836FCF20BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		48836FD120BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		48836FD320BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		48836FD520BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		48836FD720BC5D8600BDC99E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		489EA97B20BC5A1000A39B77 /* MartianForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MartianForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		489EA98F20BC5A1100A39B77 /* MartianForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MartianForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		489EA99320BC5A1100A39B77 /* MartianForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianForumTests.swift; sourceTree = "<group>"; };
+		489EA99520BC5A1100A39B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AEBDB11283BF1D16E73CFD6 /* Pods_MartianForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MartianForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FF4A76E39A6627C9BB0221 /* Pods-MartianForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum.release.xcconfig"; sourceTree = "<group>"; };
+		A8C34FE5F79D32D19F3F3C46 /* Pods-MartianForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests.release.xcconfig"; sourceTree = "<group>"; };
+		CF44CDA3EEE51C5EADB459E3 /* Pods_MartianForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MartianForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		489EA97820BC5A1000A39B77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EFF71BCDF43CE1664B9B5E1 /* Pods_MartianForum.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489EA98C20BC5A1100A39B77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB2564D1065F2DF8332BAA4B /* Pods_MartianForumTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48836FBF20BC5D8600BDC99E /* MartianForum */ = {
+			isa = PBXGroup;
+			children = (
+				48836FC020BC5D8600BDC99E /* App */,
+				48836FD820BC5D8600BDC99E /* Common */,
+				48836FC320BC5D8600BDC99E /* Resources */,
+			);
+			path = MartianForum;
+			sourceTree = "<group>";
+		};
+		48836FC020BC5D8600BDC99E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48836FC220BC5D8600BDC99E /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		48836FC320BC5D8600BDC99E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48836FC420BC5D8600BDC99E /* Storyboards */,
+				48836FC720BC5D8600BDC99E /* Resources */,
+				48836FCA20BC5D8600BDC99E /* Other */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		48836FC420BC5D8600BDC99E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		48836FC720BC5D8600BDC99E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48836FCC20BC5D8600BDC99E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		48836FCA20BC5D8600BDC99E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				48836FCB20BC5D8600BDC99E /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		48836FCD20BC5D8600BDC99E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48836FCE20BC5D8600BDC99E /* UI */,
+				48836FD020BC5D8600BDC99E /* UIKit */,
+				48836FD220BC5D8600BDC99E /* Foundation */,
+				48836FD420BC5D8600BDC99E /* Utilities */,
+				48836FD620BC5D8600BDC99E /* System */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48836FCE20BC5D8600BDC99E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				48836FCF20BC5D8600BDC99E /* .gitkeep */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		48836FD020BC5D8600BDC99E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				48836FD120BC5D8600BDC99E /* .gitkeep */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		48836FD220BC5D8600BDC99E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				48836FD320BC5D8600BDC99E /* .gitkeep */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		48836FD420BC5D8600BDC99E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				48836FD520BC5D8600BDC99E /* .gitkeep */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		48836FD620BC5D8600BDC99E /* System */ = {
+			isa = PBXGroup;
+			children = (
+				48836FD720BC5D8600BDC99E /* .gitkeep */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		48836FD820BC5D8600BDC99E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				48836FCD20BC5D8600BDC99E /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		489EA97220BC5A1000A39B77 = {
+			isa = PBXGroup;
+			children = (
+				48836FBF20BC5D8600BDC99E /* MartianForum */,
+				489EA99220BC5A1100A39B77 /* MartianForumTests */,
+				489EA97C20BC5A1000A39B77 /* Products */,
+				CCFF8D42C42D7B5D3C00D2E0 /* Pods */,
+				8BFA50BE4E5EE7AADF152A68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		489EA97C20BC5A1000A39B77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				489EA97B20BC5A1000A39B77 /* MartianForum.app */,
+				489EA98F20BC5A1100A39B77 /* MartianForumTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		489EA99220BC5A1100A39B77 /* MartianForumTests */ = {
+			isa = PBXGroup;
+			children = (
+				489EA99320BC5A1100A39B77 /* MartianForumTests.swift */,
+				489EA99520BC5A1100A39B77 /* Info.plist */,
+			);
+			path = MartianForumTests;
+			sourceTree = "<group>";
+		};
+		8BFA50BE4E5EE7AADF152A68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBDB11283BF1D16E73CFD6 /* Pods_MartianForum.framework */,
+				CF44CDA3EEE51C5EADB459E3 /* Pods_MartianForumTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCFF8D42C42D7B5D3C00D2E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12338E65777B1E001985E489 /* Pods-MartianForum.debug.xcconfig */,
+				A3FF4A76E39A6627C9BB0221 /* Pods-MartianForum.release.xcconfig */,
+				156D9AF33124ABB1E714C93D /* Pods-MartianForumTests.debug.xcconfig */,
+				A8C34FE5F79D32D19F3F3C46 /* Pods-MartianForumTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		489EA97A20BC5A1000A39B77 /* MartianForum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 489EA99820BC5A1100A39B77 /* Build configuration list for PBXNativeTarget "MartianForum" */;
+			buildPhases = (
+				DC4F30212994299125C984AB /* [CP] Check Pods Manifest.lock */,
+				489EA97720BC5A1000A39B77 /* Sources */,
+				489EA97820BC5A1000A39B77 /* Frameworks */,
+				489EA97920BC5A1000A39B77 /* Resources */,
+				F2515059DE098070607B33DC /* [CP] Embed Pods Frameworks */,
+				48836FBE20BC5C9000BDC99E /* Swift Lint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MartianForum;
+			productName = MartianForum;
+			productReference = 489EA97B20BC5A1000A39B77 /* MartianForum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		489EA98E20BC5A1100A39B77 /* MartianForumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 489EA99B20BC5A1100A39B77 /* Build configuration list for PBXNativeTarget "MartianForumTests" */;
+			buildPhases = (
+				C69E6A6A41F1D772E0A3BD24 /* [CP] Check Pods Manifest.lock */,
+				489EA98B20BC5A1100A39B77 /* Sources */,
+				489EA98C20BC5A1100A39B77 /* Frameworks */,
+				489EA98D20BC5A1100A39B77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				489EA99120BC5A1100A39B77 /* PBXTargetDependency */,
+			);
+			name = MartianForumTests;
+			productName = MartianForumTests;
+			productReference = 489EA98F20BC5A1100A39B77 /* MartianForumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		489EA97320BC5A1000A39B77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Codeopolis;
+				TargetAttributes = {
+					489EA97A20BC5A1000A39B77 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					489EA98E20BC5A1100A39B77 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 489EA97A20BC5A1000A39B77;
+					};
+				};
+			};
+			buildConfigurationList = 489EA97620BC5A1000A39B77 /* Build configuration list for PBXProject "MartianForum" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 489EA97220BC5A1000A39B77;
+			productRefGroup = 489EA97C20BC5A1000A39B77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				489EA97A20BC5A1000A39B77 /* MartianForum */,
+				489EA98E20BC5A1100A39B77 /* MartianForumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		489EA97920BC5A1000A39B77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48836FE520BC5D8600BDC99E /* .gitkeep in Resources */,
+				48836FE620BC5D8600BDC99E /* .gitkeep in Resources */,
+				48836FE020BC5D8600BDC99E /* Info.plist in Resources */,
+				48836FE320BC5D8600BDC99E /* .gitkeep in Resources */,
+				48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */,
+				48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */,
+				48836FE420BC5D8600BDC99E /* .gitkeep in Resources */,
+				48836FE220BC5D8600BDC99E /* .gitkeep in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489EA98D20BC5A1100A39B77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48836FBE20BC5C9000BDC99E /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		C69E6A6A41F1D772E0A3BD24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MartianForumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4F30212994299125C984AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MartianForum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2515059DE098070607B33DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		489EA97720BC5A1000A39B77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489EA98B20BC5A1100A39B77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		489EA99120BC5A1100A39B77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 489EA97A20BC5A1000A39B77 /* MartianForum */;
+			targetProxy = 489EA99020BC5A1100A39B77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		489EA99620BC5A1100A39B77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		489EA99720BC5A1100A39B77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		489EA99920BC5A1100A39B77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12338E65777B1E001985E489 /* Pods-MartianForum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/MartianForum/Resources/Other/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeopolis.MartianForum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		489EA99A20BC5A1100A39B77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3FF4A76E39A6627C9BB0221 /* Pods-MartianForum.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/MartianForum/Resources/Other/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeopolis.MartianForum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		489EA99C20BC5A1100A39B77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 156D9AF33124ABB1E714C93D /* Pods-MartianForumTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MartianForumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeopolis.MartianForumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MartianForum.app/MartianForum";
+			};
+			name = Debug;
+		};
+		489EA99D20BC5A1100A39B77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C34FE5F79D32D19F3F3C46 /* Pods-MartianForumTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MartianForumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codeopolis.MartianForumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MartianForum.app/MartianForum";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		489EA97620BC5A1000A39B77 /* Build configuration list for PBXProject "MartianForum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				489EA99620BC5A1100A39B77 /* Debug */,
+				489EA99720BC5A1100A39B77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		489EA99820BC5A1100A39B77 /* Build configuration list for PBXNativeTarget "MartianForum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				489EA99920BC5A1100A39B77 /* Debug */,
+				489EA99A20BC5A1100A39B77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		489EA99B20BC5A1100A39B77 /* Build configuration list for PBXNativeTarget "MartianForumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				489EA99C20BC5A1100A39B77 /* Debug */,
+				489EA99D20BC5A1100A39B77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 489EA97320BC5A1000A39B77 /* Project object */;
+}
