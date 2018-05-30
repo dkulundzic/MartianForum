@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkService {
+class RequestDispatcher {
   private let baseUrl: URL
   private let jsonEncoder = JSONEncoder()
   private let jsonDecoder = JSONDecoder()
@@ -19,8 +19,8 @@ class NetworkService {
   }
 }
 
-extension NetworkService {
-  func request<T: Codable>(using resource: ResourceProtocol, body: T, success: ArgumentlessCompletion, failure: Failure) {
+extension RequestDispatcher {
+  func request<T: Codable>(using resource: ResourceProtocol, body: T, success: ArgumentlessCompletion, failure: FailureCompletion) {
     let url = baseUrl.appendingPathComponent(resource.endpoint)
     let request = requestSerializer.serialize(request: URLRequest(url: url))
     let dataTask = URLSession.shared.dataTask(with: request) { _, response, error in
@@ -35,7 +35,7 @@ extension NetworkService {
     dataTask.resume()
   }
   
-  func request<T: Codable>(using resource: ResourceProtocol, requestMethod: RequestMethod = .get, success: Completion<T>, failure: Failure) {
+  func request<T: Codable>(using resource: ResourceProtocol, requestMethod: RequestMethod = .get, success: SuccessCompletion<T>, failure: FailureCompletion) {
     let url = baseUrl.appendingPathComponent(resource.endpoint)
     let request = requestSerializer.serialize(request: URLRequest(url: url))
     let dataTask = URLSession.shared.dataTask(with: request) { data, _, error in

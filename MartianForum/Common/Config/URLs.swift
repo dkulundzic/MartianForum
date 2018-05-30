@@ -9,5 +9,5 @@
 import Foundation
 
 public struct URLs {
-    static let apiURL = "https://demo.martian.agency/api"
+  static let apiURL: URL = "https://demo.martian.agency/api"
 }
