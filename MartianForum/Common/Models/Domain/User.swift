@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Requestable {
+  static var resource: ResourceProtocol {
+    return Resource.users(nil)
+  }
+  
   let id: Int
   let name: String
   let username: String

@@ -9,27 +9,36 @@
 import Foundation
 
 enum Resource: ResourceProtocol {
-  case posts
-  case comments
-  case todos
-  case albums
-  case users
-  case photos
+  case posts(Int?)
+  case comments(Int?)
+  case todos(Int?)
+  case albums(Int?)
+  case users(Int?)
+  case photos(Int?)
   
-  var endpoint: String {
+  func endpoint(for method: HttpRequest.Method) -> String {
     switch self {
-    case .posts:
-      return "posts"
-    case .albums:
-      return "albums"
-    case .todos:
-      return "todos"
-    case .comments:
-      return "comments"
-    case .users:
-      return "users"
-    case .photos:
-      return "photos"
+    case .posts(let id):
+      return endpoint("posts", byAppendingEntityId: id)
+    case .albums(let id):
+      return endpoint("albums", byAppendingEntityId: id)
+    case .todos(let id):
+      return endpoint("todos", byAppendingEntityId: id)
+    case .comments(let id):
+      return endpoint("comments", byAppendingEntityId: id)
+    case .users(let id):
+      return endpoint("users", byAppendingEntityId: id)
+    case .photos(let id):
+      return endpoint("photos", byAppendingEntityId: id)
     }
+  }
+}
+
+private extension Resource {
+  func endpoint(_ endpoint: String, byAppendingEntityId id: Int?) -> String {
+    guard let id = id else {
+      return endpoint
+    }
+    return endpoint.appending("/\(id)")
   }
 }

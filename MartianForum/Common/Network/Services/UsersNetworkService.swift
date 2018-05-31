@@ -8,24 +8,14 @@
 
 import Foundation
 
-class UsersNetworkService: NetworkService<User> {
-  override func get(id: String, success: SuccessCompletion<[User]>, failure: FailureCompletion) {
-    
+struct UsersNetworkService: RestfulNetworkService {
+  func get(id: Int, success: SuccessCompletion<User?>, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.users(id), requestMethod: .get, success: success, failure: failure)
   }
   
-  override func get(success: SuccessCompletion<[User]>, failure: FailureCompletion) {
-    
-  }
-  
-  override func post(model: User, success: SuccessCompletion<User>, failure: FailureCompletion) {
-    
-  }
-  
-  override func update(model: User, success: SuccessCompletion<User>, failure: FailureCompletion) {
-    
-  }
-  
-  override func delete(id: String, success: ArgumentlessCompletion, failure: FailureCompletion) {
-    
+  func delete(id: Int, success: ArgumentlessCompletion, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.users(id), requestMethod: .delete, success: success, failure: failure)
   }
 }

@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Comment: Codable {
+struct Comment: Requestable {
+  static var resource: ResourceProtocol {
+    return Resource.comments(nil)    
+  }
+  
   let id: Int
   let postId: Int
   let name: String

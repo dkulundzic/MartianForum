@@ -11,13 +11,14 @@ import Foundation
 enum NetworkError: MartianError {
   case wrapped(Error)
   case custom(String)
+  case invalidStatusCode(Int)
   case generic
   case noInternetConnection
   case invalidData
   
   var localisedTitle: String? {
     switch self {
-    case .generic, .noInternetConnection, .wrapped, .custom, .invalidData:
+    case .generic, .noInternetConnection, .wrapped, .custom, .invalidData, .invalidStatusCode:
       return "Error"
     }
   }
@@ -30,6 +31,8 @@ enum NetworkError: MartianError {
       return "No internet connection."
     case .invalidData:
       return "Data in invalid format."
+    case .invalidStatusCode(let statusCode):
+      return "The server responded with an invalid status code {\(statusCode)}."
     case .wrapped(let error):
       return error.localizedDescription
     case .custom(let errorMessage):

@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post: Requestable {
+  static var resource: ResourceProtocol {
+    return Resource.posts(nil)
+  }
+  
   let id: Int
   let userId: Int
   let title: String
-  let body: String  
+  let body: String
 }

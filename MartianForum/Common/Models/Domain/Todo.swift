@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Todo: Codable {
+struct Todo: Requestable {
+  static var resource: ResourceProtocol {
+    return Resource.todos(nil)
+  }
+  
   let id: Int
   let userId: Int
   let title: String

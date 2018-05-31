@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Album: Codable {
+struct Album: Requestable {
+  static var resource: ResourceProtocol {
+    return Resource.albums(nil)
+  }
+  
   let id: Int
   let userId: Int
   let title: String

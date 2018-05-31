@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct RequestJSONSerializer: RequestSerializer {
+struct HttpRequestJSONSerializer: HttpRequestSerializer {
   func serialize(request: URLRequest) -> URLRequest {
     var mutableRequest = request
-    mutableRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    mutableRequest.addValue(HttpRequest.ContentType.json.rawValue, forHTTPHeaderField: HttpRequest.Headers.contentType.rawValue)
     return mutableRequest
   }
 }

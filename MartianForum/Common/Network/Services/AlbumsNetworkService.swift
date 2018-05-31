@@ -8,24 +8,14 @@
 
 import Foundation
 
-class AlbumsNetworkService: NetworkService<Album> {
-  override func get(id: String, success: SuccessCompletion<[Album]>, failure: FailureCompletion) {
-    
+struct AlbumsNetworkService: RestfulNetworkService {
+  func get(id: Int, success: SuccessCompletion<Album?>, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.albums(id), requestMethod: .get, success: success, failure: failure)
   }
   
-  override func get(success: SuccessCompletion<[Album]>, failure: FailureCompletion) {
-    
-  }
-  
-  override func post(model: Album, success: SuccessCompletion<Album>, failure: FailureCompletion) {
-    
-  }
-  
-  override func update(model: Album, success: SuccessCompletion<Album>, failure: FailureCompletion) {
-    
-  }
-  
-  override func delete(id: String, success: ArgumentlessCompletion, failure: FailureCompletion) {
-    
+  func delete(id: Int, success: ArgumentlessCompletion, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.albums(id), requestMethod: .delete, success: success, failure: failure)
   }
 }

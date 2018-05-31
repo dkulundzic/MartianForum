@@ -8,24 +8,14 @@
 
 import Foundation
 
-class TodosNetworkService: NetworkService<Todo> {
-  override func get(id: String, success: SuccessCompletion<[Todo]>, failure: FailureCompletion) {
-    
+struct TodosNetworkService: RestfulNetworkService {
+  func get(id: Int, success: SuccessCompletion<Todo?>, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.todos(id), requestMethod: .get, success: success, failure: failure)
   }
   
-  override func get(success: SuccessCompletion<[Todo]>, failure: FailureCompletion) {
-    
-  }
-  
-  override func post(model: Todo, success: SuccessCompletion<Todo>, failure: FailureCompletion) {
-    
-  }
-  
-  override func update(model: Todo, success: SuccessCompletion<Todo>, failure: FailureCompletion) {
-    
-  }
-  
-  override func delete(id: String, success: ArgumentlessCompletion, failure: FailureCompletion) {
-    
+  func delete(id: Int, success: ArgumentlessCompletion, failure: FailureCompletion) {
+    HttpRequestDispatcher(baseUrl: URLs.apiURL)
+      .request(using: Resource.todos(id), requestMethod: .delete, success: success, failure: failure)
   }
 }

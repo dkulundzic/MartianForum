@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ResourceProtocol {
-  var endpoint: String { get }
+  func endpoint(for method: HttpRequest.Method) -> String
 }

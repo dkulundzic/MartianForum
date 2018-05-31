@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol RequestSerializer {
+protocol HttpRequestSerializer {
   func serialize(request: URLRequest) -> URLRequest
 }

@@ -19,13 +19,13 @@ enum LogLevel: Int {
     func string() -> String {
         switch self {
         case .info:
-            return "INFO"
+            return "ℹ️ INFO"
         case .warn:
-            return "WARN"
+            return "⚠️ WARN"
         case .debug:
             return "DEBUG"
         case .error:
-            return "ERROR"
+            return "❌ ERROR"
         default:
             return ""
         }
