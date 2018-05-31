@@ -10,7 +10,7 @@ import Foundation
 
 struct Todo: Requestable {
   static var resource: ResourceProtocol {
-    return Resource.todos(nil)
+    return Resource.todos
   }
   
   let id: Int

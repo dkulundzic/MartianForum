@@ -19,6 +19,18 @@ class TabBarController: UITabBarController {
   }
 }
 
+extension TabBarController: PostsRouterDelegate {
+  
+}
+
+extension TabBarController: AlbumsRouterDelegate {
+  
+}
+
+extension TabBarController: TodosRouterDelegate {
+  
+}
+
 private extension TabBarController {
   func setupView() {
     setupTabs()

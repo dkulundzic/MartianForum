@@ -10,7 +10,7 @@ import Foundation
 
 struct Photo: Requestable {
   static var resource: ResourceProtocol {
-    return Resource.photos(nil)
+    return Resource.photos
   }
   
   let id: Int

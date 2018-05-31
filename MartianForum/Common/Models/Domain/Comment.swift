@@ -10,7 +10,7 @@ import Foundation
 
 struct Comment: Requestable {
   static var resource: ResourceProtocol {
-    return Resource.comments(nil)    
+    return Resource.comments    
   }
   
   let id: Int

@@ -10,7 +10,7 @@ import Foundation
 
 struct Post: Requestable {
   static var resource: ResourceProtocol {
-    return Resource.posts(nil)
+    return Resource.posts
   }
   
   let id: Int

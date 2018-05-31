@@ -10,7 +10,7 @@ import Foundation
 
 struct Album: Requestable {
   static var resource: ResourceProtocol {
-    return Resource.albums(nil)
+    return Resource.albums
   }
   
   let id: Int
