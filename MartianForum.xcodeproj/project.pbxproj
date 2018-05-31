@@ -14,6 +14,7 @@
 		489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489EA99320BC5A1100A39B77 /* MartianForumTests.swift */; };
 		48CB204F20C07D58005D1A25 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB204E20C07D58005D1A25 /* HttpRequest.swift */; };
 		48CB205420C08D7A005D1A25 /* HttpRequestQueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB205320C08D7A005D1A25 /* HttpRequestQueryBuilder.swift */; };
+		48CB205620C09087005D1A25 /* HttpRequestQueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */; };
 		48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53120C06DBB004E90EE /* Requestable.swift */; };
 		48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */; };
 		48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */; };
@@ -105,6 +106,7 @@
 		489EA99520BC5A1100A39B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48CB204E20C07D58005D1A25 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		48CB205320C08D7A005D1A25 /* HttpRequestQueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestQueryBuilder.swift; sourceTree = "<group>"; };
+		48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestQueryBuilderTests.swift; sourceTree = "<group>"; };
 		48CCE53120C06DBB004E90EE /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkServiceTests.swift; sourceTree = "<group>"; };
 		48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAuthSerializer.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */,
+				48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */,
+				48CB205620C09087005D1A25 /* HttpRequestQueryBuilderTests.swift in Sources */,
 				489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
