@@ -9,6 +9,5 @@
 import Foundation
 
 enum PostsRow {
-  case title(PostsTitleCell.ViewModel)
-  case comment(PostsCommentCell.ViewModel)
+  case post(PostCell.ViewModel, Post)
 }

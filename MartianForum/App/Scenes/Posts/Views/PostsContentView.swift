@@ -24,6 +24,6 @@ class PostsContentView: UIView {
 // MARK: - Private Methods
 private extension PostsContentView {
   func setupView() {
-    
+    // TODO: - 
   }
 }

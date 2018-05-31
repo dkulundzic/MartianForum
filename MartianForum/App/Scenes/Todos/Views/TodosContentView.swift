@@ -24,6 +24,6 @@ class TodosContentView: UIView {
 // MARK: - Private Methods
 private extension TodosContentView {
   func setupView() {
-    
+    // TODO: - 
   }
 }

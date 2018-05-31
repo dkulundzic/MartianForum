@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PostsTitleCell: UITableViewCell {
-  typealias ViewModel = (String, String, String, URL?)
+class PostCell: UITableViewCell {
+  typealias ViewModel = (String, String)
   
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,14 +21,14 @@ class PostsTitleCell: UITableViewCell {
   }
 }
 
-extension PostsTitleCell {
+extension PostCell {
   func update(viewModel: ViewModel) {
-    
+    // TODO: -
   }
 }
 
-private extension PostsTitleCell {
+private extension PostCell {
   func setupViews() {
-    
+    // TODO: - 
   }
 }

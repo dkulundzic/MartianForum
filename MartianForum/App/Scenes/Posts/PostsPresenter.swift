@@ -9,7 +9,8 @@
 import Foundation
 
 protocol PostsPresentationLogic {
-  
+  func presentPosts(_ posts: [Post])
+  func presentError(_ error: MartianError)
 }
 
 class PostsPresenter {
@@ -18,5 +19,11 @@ class PostsPresenter {
 
 // MARK: - Presentation Logic
 extension PostsPresenter: PostsPresentationLogic {
+  func presentPosts(_ posts: [Post]) {
+    viewController?.displayPosts(posts)
+  }
   
+  func presentError(_ error: MartianError) {
+    viewController?.displayError(title: error.localisedTitle, message: error.localizedDescription)
+  }
 }

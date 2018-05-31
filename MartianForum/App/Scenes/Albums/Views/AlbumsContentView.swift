@@ -24,6 +24,6 @@ class AlbumsContentView: UIView {
 // MARK: - Private Methods
 private extension AlbumsContentView {
   func setupView() {
-    
+    // TODO: - 
   }
 }

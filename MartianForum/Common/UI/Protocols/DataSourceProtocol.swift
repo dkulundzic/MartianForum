@@ -10,7 +10,7 @@ import Foundation
 
 protocol DataSourceProtocol {
 	associatedtype Section: SectionProtocol
-	var sections: [Section] { get set }
+	var sections: [Section] { get }
 	var isEmpty: Bool { get }
 }
 

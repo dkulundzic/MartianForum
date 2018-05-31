@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PostsRoutingLogic {
-  
+  func navigateToPostDetails(_ post: Post)
 }
 
 protocol PostsRouterDelegate: class {
@@ -23,5 +23,7 @@ class PostsRouter {
 
 // MARK: - Routing Logic
 extension PostsRouter: PostsRoutingLogic {
-  
+  func navigateToPostDetails(_ post: Post) {
+    // TODO: - 
+  }
 }

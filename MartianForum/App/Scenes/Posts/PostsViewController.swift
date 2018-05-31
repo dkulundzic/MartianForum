@@ -9,7 +9,8 @@
 import UIKit
 
 protocol PostsDisplayLogic: class {
-  
+  func displayPosts(_ posts: [Post])
+  func displayError(title: String?, message: String?)
 }
 
 class PostsViewController: UIViewController {
@@ -30,6 +31,7 @@ class PostsViewController: UIViewController {
     self.interactor = interactor
     self.router = router
     setupView()
+    interactor.loadPosts()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -39,7 +41,14 @@ class PostsViewController: UIViewController {
 
 // MARK: - Display Logic
 extension PostsViewController: PostsDisplayLogic {
+  func displayPosts(_ posts: [Post]) {
+    dataSource.addPosts(posts)
+    contentView.tableView.reloadData()
+  }
   
+  func displayError(title: String?, message: String?) {
+    // TODO: - 
+  }
 }
 
 // MARK: - UITableViewDataSource
@@ -58,17 +67,26 @@ extension PostsViewController: UITableViewDataSource {
     }
     
     switch row {
-    case .title:
-      return UITableViewCell()
-    case .comment:
-      return UITableViewCell()
+    case .post(let viewModel, _):
+      let cell = tableView.dequeueReusableCell(PostCell.self, at: indexPath)
+      cell.update(viewModel: viewModel)
+      return cell
     }
   }
 }
 
 // MARK: - UITableViewDelegate
 extension PostsViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let row = dataSource.section(at: indexPath.section)?.row(at: indexPath.row) else {
+      return
+    }
+    
+    switch row {
+    case .post(_, let post):
+      router?.navigateToPostDetails(post)
+    }
+  }
 }
 
 // MARK: - Private Methods
@@ -81,5 +99,6 @@ private extension PostsViewController {
     view.addSubview(contentView)
     contentView.tableView.dataSource = self
     contentView.tableView.delegate = self
+    contentView.tableView.register(PostCell.self)
   }
 }
