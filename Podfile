@@ -7,6 +7,7 @@ target 'MartianForum' do
 
   pod 'SwiftLint'
   pod 'SnapKit', '~> 4.0.0'
+  pod 'PromisesSwift', '~> 1.2.2'
 
   target 'MartianForumTests' do
     inherit! :search_paths

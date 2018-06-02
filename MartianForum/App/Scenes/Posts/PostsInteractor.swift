@@ -21,18 +21,18 @@ class PostsInteractor {
 // MARK: - Business Logic
 extension PostsInteractor: PostsBusinessLogic {
   func loadPosts() {
-    postsWorker.getPosts(success: { [weak self] posts in
-      self?.presenter?.presentPosts(posts)
-    }, failure: { [weak self] error in
-      self?.presenter?.presentError(NetworkError.wrapped(error))
-    })
+    postsWorker.getPosts().then { [weak self] in
+      self?.presenter?.presentPosts($0)
+    }.catch { [weak self] in
+      self?.presenter?.presentError(NetworkError.wrapped($0))
+    }
   }
   
   func createPost(_ post: Post) {
-    postsWorker.createPost(post, success: { [weak self] post in
-      self?.presenter?.presentPost(post, creationResult: true)
-    }, failure: { [weak self] _ in
+    postsWorker.createPost(post).then { [weak self] in
+      self?.presenter?.presentPost($0, creationResult: true)
+    }.catch { [weak self] _ in
       self?.presenter?.presentPost(post, creationResult: false)
-    })
+    }
   }
 }
