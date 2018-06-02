@@ -10,7 +10,7 @@ import Promises
 
 class PostsWorker {
   func getPosts() -> Promise<[PostUser]> {
-    return all(RestfulNetworkService<User>().getWithPromise(), RestfulNetworkService<Post>().getWithPromise()).then { data -> [PostUser] in
+    return all(RestfulNetworkService<User>().getAll(), RestfulNetworkService<Post>().getAll()).then { data -> [PostUser] in
       let users = data.0
       let posts = data.1
       return posts.compactMap { post in

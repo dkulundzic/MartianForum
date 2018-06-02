@@ -13,13 +13,6 @@ class RestfulNetworkService<Model: Requestable> {
     return Model.resource
   }
   
-  func getWithPromise(query: [Query]? = nil) -> Promise<[Model]> {
-    return Promise { fullfill, reject in
-      HttpRequestDispatcher(baseUrl: URLs.apiURL)
-        .request(using: self.resource.endpoint, requestMethod: .get, query: query, success: fullfill, failure: reject)
-    }
-  }
-  
   func get(id: Int, query: [Query]? = nil)  -> Promise<Model> {
     return Promise { fullfill, reject in
       HttpRequestDispatcher(baseUrl: URLs.apiURL)
@@ -27,7 +20,7 @@ class RestfulNetworkService<Model: Requestable> {
     }
   }
   
-  func get(query: [Query]? = nil) -> Promise<[Model]> {
+  func getAll(query: [Query]? = nil) -> Promise<[Model]> {
     return Promise { fullfill, reject in
       HttpRequestDispatcher(baseUrl: URLs.apiURL)
         .request(using: self.resource.endpoint, requestMethod: .get, query: query, success: fullfill, failure: reject)
