@@ -9,7 +9,7 @@
 import Foundation
 
 class PostDetailsDataSource: DataSourceProtocol {
-  private let post: PostUser
+  let post: PostUser
   private var comments = [Comment]()
   private(set) var sections = [PostDetailsSection]()
   

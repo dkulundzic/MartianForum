@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PostDetailsBusinessLogic {
-  func loadComments()
+  func loadComments(for post: Post)
 }
 
 class PostDetailsInteractor {
@@ -19,8 +19,8 @@ class PostDetailsInteractor {
 
 // MARK: - Business Logic
 extension PostDetailsInteractor: PostDetailsBusinessLogic {
-  func loadComments() {
-    commentsWorker.getComments().then { [weak self] in
+  func loadComments(for post: Post) {
+    commentsWorker.getComments(for: post.id).then { [weak self] in
       self?.presenter?.presentComments($0)
     }.catch { [weak self] in
       self?.presenter?.presentError(NetworkError.wrapped($0))

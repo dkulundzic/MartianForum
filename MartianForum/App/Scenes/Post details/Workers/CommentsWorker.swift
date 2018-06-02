@@ -9,7 +9,10 @@
 import Promises
 
 class CommentsWorker {
-  func getComments() -> Promise<[Comment]> {
-    return RestfulNetworkService<Comment>().getAll()
+  func getComments(for post: Int) -> Promise<[Comment]> {
+    let query = HttpRequestQueryBuilder()
+      .addQuery(key: "postId", value: post)
+      .query()
+    return RestfulNetworkService<Comment>().getAll(query: query)
   }
 }
