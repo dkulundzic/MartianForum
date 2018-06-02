@@ -11,4 +11,5 @@ import Foundation
 enum PostDetailsRow {
   case title(PostDetailsTitleCell.ViewModel)
   case comment(PostDetailsCommentCell.ViewModel)
+  case input
 }

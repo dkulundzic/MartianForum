@@ -60,6 +60,10 @@ class PostDetailsViewController: UITableViewController {
       let cell = tableView.dequeueReusableCell(PostDetailsCommentCell.self, at: indexPath)
       cell.update(viewModel)
       return cell
+    case .input:
+      let cell = tableView.dequeueReusableCell(PostDetailsInputCell.self, at: indexPath)
+      cell.textField.delegate = self
+      return cell
     }
   }
 }
@@ -77,6 +81,16 @@ extension PostDetailsViewController: PostDetailsDisplayLogic {
   }
 }
 
+// MARK: - UITextFieldDelegate
+extension PostDetailsViewController: UITextFieldDelegate {
+  func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    router?.navigateToCommentCreation(post: dataSource.post.post, commentPostHandler: { [weak self] in
+      self?.handleCommentPost(comment: $0)
+    })
+    return false
+  }
+}
+
 // MARK: - Private Methods
 private extension PostDetailsViewController {
   func setupView() {
@@ -90,5 +104,10 @@ private extension PostDetailsViewController {
     tableView.estimatedRowHeight = 100
     tableView.register(PostDetailsTitleCell.self)
     tableView.register(PostDetailsCommentCell.self)
+    tableView.register(PostDetailsInputCell.self)
+  }
+  
+  func handleCommentPost(comment: Comment) {
+    
   }
 }

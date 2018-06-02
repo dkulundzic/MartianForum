@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CommentingBusinessLogic {
-  
+  func postComment(_ comment: String, for post: Post)
 }
 
 class CommentingInteractor {
@@ -18,5 +18,7 @@ class CommentingInteractor {
 
 // MARK: - Business Logic
 extension CommentingInteractor: CommentingBusinessLogic {
-  
+  func postComment(_ comment: String, for post: Post) {
+    let comment = Comment(id: -1, postId: post.id, name: "Test", email: "test@gmail.com", body: comment)
+  }
 }

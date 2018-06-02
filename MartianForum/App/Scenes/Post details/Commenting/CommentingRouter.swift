@@ -9,11 +9,11 @@
 import Foundation
 
 protocol CommentingRoutingLogic {
-  
+  func unwindBack()
 }
 
 protocol CommentingRouterDelegate: class {
-  
+  func commentingRouterUnwindBack()
 }
 
 class CommentingRouter {
@@ -23,5 +23,7 @@ class CommentingRouter {
 
 // MARK: - Routing Logic
 extension CommentingRouter: CommentingRoutingLogic {
-  
+  func unwindBack() {
+    delegate?.commentingRouterUnwindBack()
+  }
 }

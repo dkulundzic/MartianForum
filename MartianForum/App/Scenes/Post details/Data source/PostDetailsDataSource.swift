@@ -9,7 +9,7 @@
 import Foundation
 
 class PostDetailsDataSource: DataSourceProtocol {
-  private let post: PostUser
+  let post: PostUser
   private var comments = [Comment]()
   private(set) var sections = [PostDetailsSection]()
   
@@ -39,6 +39,7 @@ private extension PostDetailsDataSource {
         PostDetailsRow.comment(PostDetailsCommentCell.ViewModel("\($0.name)\n(\($0.email))", $0.body))
       }
     )
+    rows.append(.input)
     
     sections.append(PostDetailsSection.postDetails(rows))
   }

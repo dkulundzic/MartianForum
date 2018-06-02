@@ -9,15 +9,20 @@
 import UIKit
 
 protocol CommentingDisplayLogic: class {
-  
+  func displaySuccessfulCommentPost(comment: Comment)
+  func displayError(title: String?, message: String?)
 }
 
 class CommentingViewController: UIViewController {
+  typealias CommentPostHandler = ((Comment) -> Void)?
+  var handler: CommentPostHandler
   var interactor: CommentingBusinessLogic?
   var router: CommentingRoutingLogic?
   private let contentView = CommentingContentView.autolayoutView()
+  private let post: Post
   
-  init(delegate: CommentingRouterDelegate?) {
+  init(post: Post, handler: CommentPostHandler, delegate: CommentingRouterDelegate?) {
+    self.post = post
     super.init(nibName: nil, bundle: nil)
     let interactor = CommentingInteractor()
     let presenter = CommentingPresenter()
@@ -35,21 +40,55 @@ class CommentingViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-    super.traitCollectionDidChange(previousTraitCollection)
-    // call update constraints method
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    contentView.textView.becomeFirstResponder()
   }
 }
 
 // MARK: - Display Logic
 extension CommentingViewController: CommentingDisplayLogic {
+  func displaySuccessfulCommentPost(comment: Comment) {
+    let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { _ in self.router?.unwindBack() }
+    let alert = UIAlertController.generic(title: "Comment", message: "Your comment was successfully sent.", preferredStyle: .alert, actions: [confirmAction])
+    alert.present(on: self)
+  }
   
+  func displayError(title: String?, message: String?) {
+    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
+    alert.present(on: self)
+  }
+}
+
+// MARK: - UITextViewDelegate
+extension CommentingViewController: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    navigationItem.rightBarButtonItem?.isEnabled = !textView.text.isEmpty
+  }
+}
+
+// MARK: - Actions
+private extension CommentingViewController {
+  @objc func dismissButtonTapped() {
+    router?.unwindBack()
+  }
+  
+  @objc func sendTapped() {
+    interactor?.postComment(contentView.textView.text, for: post)
+  }
 }
 
 // MARK: - Private Methods
 private extension CommentingViewController {
   func setupView() {
+    setupNavigationBar()
     setupContentView()
+  }
+  
+  func setupNavigationBar() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem.dismiss(target: self, selector: #selector(dismissButtonTapped))
+    navigationItem.rightBarButtonItem = UIBarButtonItem.send(target: self, selector: #selector(sendTapped))
+    navigationItem.rightBarButtonItem?.tintColor = .blue
   }
   
   func setupContentView() {

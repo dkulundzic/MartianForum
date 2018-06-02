@@ -12,7 +12,7 @@ enum PostDetailsSection: SectionProtocol {
   case postDetails([PostDetailsRow])
   
   var rows: [PostDetailsRow] {
-    switch  self {
+    switch self {
     case .postDetails(let rows):
       return rows
     }

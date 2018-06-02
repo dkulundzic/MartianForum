@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CommentingPresentationLogic {
-  
+  func presentSuccessfulCommentPost(comment: Comment)
+  func presentError(_ error: MartianError)
 }
 
 class CommentingPresenter {
@@ -18,5 +19,11 @@ class CommentingPresenter {
 
 // MARK: - Presentation Logic
 extension CommentingPresenter: CommentingPresentationLogic {
+  func presentSuccessfulCommentPost(comment: Comment) {
+    viewController?.displaySuccessfulCommentPost(comment: comment)
+  }
   
+  func presentError(_ error: MartianError) {
+    viewController?.displayError(title: error.localisedTitle, message: error.localizedDescription)
+  }
 }
