@@ -22,7 +22,5 @@ class CommentingContentView: UIView {
 // MARK: - Private Methods
 private extension CommentingContentView {
   func setupView() {
-    // setup background, shadows, etc
-    // call other views setup
   }
 }
