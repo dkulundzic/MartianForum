@@ -24,6 +24,12 @@ class PostsRouter {
 // MARK: - Routing Logic
 extension PostsRouter: PostsRoutingLogic {
   func navigateToPostDetails(_ post: PostUser) {
-    // TODO: - 
+    let postDetailsViewController = PostDetailsViewController(post: post, delegate: self)
+    viewController?.navigationController?.pushViewController(postDetailsViewController, animated: true)
   }
+}
+
+// MARK: - PostDetailsRouterDelegate
+extension PostsRouter: PostDetailsRouterDelegate {
+  
 }

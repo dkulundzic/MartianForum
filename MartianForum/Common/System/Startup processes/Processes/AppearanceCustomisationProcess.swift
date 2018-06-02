@@ -16,7 +16,8 @@ public final class AppearanceCustomisationProcess: StartupProcess {
 		UIScrollView.appearance().showsVerticalScrollIndicator = false
 		UIScrollView.appearance().showsHorizontalScrollIndicator = false
 		
-		UINavigationBar.appearance().barTintColor = UIColor.white
+		UINavigationBar.appearance().barTintColor = .white
+    UINavigationBar.appearance().tintColor = .martianGray
 		UINavigationBar.appearance().prefersLargeTitles = true
 		UINavigationBar.appearance().titleTextAttributes = [
 			NSAttributedStringKey.foregroundColor: UIColor.martianGray
