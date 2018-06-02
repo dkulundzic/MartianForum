@@ -18,6 +18,11 @@ class HttpRequestQueryBuilder {
     return self
   }
   
+  func addQuery(key: String, value: Int) -> Self {
+    addedQueries.append(URLQueryItem(name: key, value: "\(value)"))
+    return self
+  }
+  
   func query() -> [Query] {
     return addedQueries
   }

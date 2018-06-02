@@ -9,7 +9,7 @@
 import UIKit
 
 class PostDetailsCommentCell: UITableViewCell {
-  typealias ViewModel = (author: String,  body: String?)
+  typealias ViewModel = (author: String, body: String?)
   
   private let authorLabel = UILabel.autolayoutView()
   private let bodyLabel = UILabel.autolayoutView()
@@ -44,7 +44,8 @@ private extension PostDetailsCommentCell {
     authorLabel.font = .preferredFont(forTextStyle: .caption1)
     authorLabel.adjustsFontForContentSizeCategory = true
     authorLabel.snp.makeConstraints {
-      $0.leading.top.trailing.equalToSuperview().inset(16)
+      $0.leading.equalToSuperview().inset(32)
+      $0.top.trailing.equalToSuperview().inset(16)
     }
   }
   
@@ -56,7 +57,8 @@ private extension PostDetailsCommentCell {
     bodyLabel.numberOfLines = 0
     bodyLabel.setContentHuggingPriority(.init(249), for: .vertical)
     bodyLabel.snp.makeConstraints {
-      $0.leading.trailing.bottom.equalToSuperview().inset(16)
+      $0.leading.equalToSuperview().inset(32)
+      $0.trailing.bottom.equalToSuperview().inset(16)
       $0.top.equalTo(authorLabel.snp.bottom).offset(6)
     }
   }

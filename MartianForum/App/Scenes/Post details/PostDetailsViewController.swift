@@ -31,7 +31,7 @@ class PostDetailsViewController: UITableViewController {
     self.interactor = interactor
     self.router = router
     setupView()
-    interactor.loadComments()
+    interactor.loadComments(for: post.post)
   }
   
   required init?(coder aDecoder: NSCoder) {
