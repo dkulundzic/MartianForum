@@ -11,6 +11,7 @@ import Foundation
 protocol PostsPresentationLogic {
   func presentPosts(_ posts: [PostUser])
   func presentPost(_ post: Post, creationResult: Bool)
+  func presentNetworkOperation(running: Bool)
   func presentError(_ error: MartianError)
 }
 
@@ -26,6 +27,10 @@ extension PostsPresenter: PostsPresentationLogic {
   
   func presentPost(_ post: Post, creationResult: Bool) {
     
+  }
+  
+  func presentNetworkOperation(running: Bool) {
+    viewController?.displayNetworkOperation(running: running)
   }
   
   func presentError(_ error: MartianError) {

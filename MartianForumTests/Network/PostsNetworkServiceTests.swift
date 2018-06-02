@@ -11,7 +11,7 @@ import XCTest
 @testable import MartianForum
 
 // TODO: - Stub requests
-class PostsNetworkServiceTests: XCTestCase {
+class PostsNetworkServiceTests: XCTestCase {  
   func testGet() {
     let promise = RestfulNetworkService<Post>().getAll()
     XCTAssert(waitForPromises(timeout: 5))

@@ -8,5 +8,10 @@
 import UIKit
 
 extension UIBarButtonItem {
-    
+  static func loadingIndicator(_ style: UIActivityIndicatorViewStyle = .gray, tintColor: UIColor? = nil) -> UIBarButtonItem {
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: style)
+    activityIndicator.color = tintColor
+    activityIndicator.startAnimating()
+    return UIBarButtonItem(customView: activityIndicator)
+  }
 }

@@ -14,7 +14,7 @@ enum NetworkError: MartianError {
   case invalidStatusCode(Int)
   case generic
   case noInternetConnection
-  case invalidData
+  case invalidData(Any.Type)
   
   var localisedTitle: String? {
     switch self {
@@ -29,8 +29,8 @@ enum NetworkError: MartianError {
       return "A network error occurred."
     case .noInternetConnection:
       return "No internet connection."
-    case .invalidData:
-      return "Data in invalid format."
+    case .invalidData(let type):
+      return "\(type) data in invalid format."
     case .invalidStatusCode(let statusCode):
       return "The server responded with an invalid status code {\(statusCode)}."
     case .wrapped(let error):

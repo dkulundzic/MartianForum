@@ -10,6 +10,7 @@ import UIKit
 
 protocol PostsDisplayLogic: class {
   func displayPosts(_ posts: [PostUser])
+  func displayNetworkOperation(running: Bool)
   func displayError(title: String?, message: String?)
 }
 
@@ -42,11 +43,19 @@ class PostsViewController: UIViewController {
 // MARK: - Display Logic
 extension PostsViewController: PostsDisplayLogic {
   func displayPosts(_ posts: [PostUser]) {
+    contentView.tableView.refreshControl?.endRefreshing()
     dataSource.addPosts(posts)
     contentView.tableView.reloadData()
   }
   
+  func displayNetworkOperation(running: Bool) {
+    guard !(contentView.tableView.refreshControl?.isRefreshing ?? true) else { return }
+    let barButton = running ? UIBarButtonItem.loadingIndicator(): nil
+    navigationItem.setRightBarButton(barButton, animated: true)
+  }
+  
   func displayError(title: String?, message: String?) {
+    contentView.tableView.refreshControl?.endRefreshing()
     let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
     alert.present(on: self)
   }
@@ -90,6 +99,13 @@ extension PostsViewController: UITableViewDelegate {
   }
 }
 
+// MARK: - Actions
+private extension PostsViewController {
+  @objc func refreshControlEngaged(_ sender: UIRefreshControl) {
+    interactor?.loadPosts()
+  }
+}
+
 // MARK: - Private Methods
 private extension PostsViewController {
   func setupView() {
@@ -103,6 +119,8 @@ private extension PostsViewController {
     view.addSubview(contentView)
     contentView.tableView.dataSource = self
     contentView.tableView.delegate = self
-    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
+    contentView.tableView.refreshControl = UIRefreshControl(frame: .zero)
+    contentView.tableView.refreshControl?.addTarget(self, action: #selector(refreshControlEngaged(_:)), for: .valueChanged)
+    contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
   }
 }

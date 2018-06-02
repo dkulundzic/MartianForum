@@ -70,9 +70,7 @@ extension HttpRequestDispatcher {
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
-      return self.invokeOnMain {
-        success?()
-      }
+      return self.invokeOnMain { success?() }
     }
   }
   
@@ -102,9 +100,7 @@ extension HttpRequestDispatcher {
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
-      self.invokeOnMain {
-        success?()
-      }
+      self.invokeOnMain { success?() }
     }
   }
   
@@ -136,13 +132,11 @@ extension HttpRequestDispatcher {
       
       guard let data = data, let entity = try? self.jsonDecoder.decode(T.self, from: data) else {
         return self.invokeOnMain {
-          failure?(NetworkError.invalidData)
+          failure?(NetworkError.invalidData(T.self))
         }
       }
       
-      self.invokeOnMain {
-        success?(entity)
-      }
+      self.invokeOnMain { success?(entity) }
     }
   }
 }
