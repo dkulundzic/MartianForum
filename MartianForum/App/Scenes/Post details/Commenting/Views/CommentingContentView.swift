@@ -9,8 +9,11 @@
 import UIKit
 
 class CommentingContentView: UIView {
+  typealias ViewModel = String
+  
   let textView = UITextView.autolayoutView()
   private let titleLabel = UILabel.autolayoutView()
+  private let titleContainerView = UIView.autolayoutView()
     
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -22,22 +25,39 @@ class CommentingContentView: UIView {
   }
 }
 
+extension CommentingContentView {
+  func update(_ viewModel: ViewModel) {
+    titleLabel.text = viewModel
+  }
+}
+
 // MARK: - Private Methods
 private extension CommentingContentView {
   func setupView() {
+    setupTitleContainerView()
     setupTitleLabel()
     setupTextView()
   }
   
+  func setupTitleContainerView() {
+    addSubview(titleContainerView)
+    titleContainerView.backgroundColor = .martianLightGray
+    titleContainerView.layer.cornerRadius = 10
+    titleContainerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    titleContainerView.snp.makeConstraints {
+      $0.top.leading.trailing.equalToSuperview()
+    }
+  }
+  
   func setupTitleLabel() {
-    addSubview(titleLabel)
+    titleContainerView.addSubview(titleLabel)
     titleLabel.textColor = .martianDarkGray
-    titleLabel.font = .preferredFont(forTextStyle: .title1)
+    titleLabel.font = .preferredFont(forTextStyle: .title3)
     titleLabel.adjustsFontForContentSizeCategory = true
     titleLabel.numberOfLines = 0
-    titleLabel.setContentHuggingPriority(.init(249), for: .vertical)
     titleLabel.snp.makeConstraints {
-      $0.top.leading.trailing.equalToSuperview().inset(16)
+      $0.top.bottom.equalToSuperview().inset(5)
+      $0.leading.trailing.equalToSuperview().inset(16)
     }
   }
   
@@ -47,9 +67,10 @@ private extension CommentingContentView {
     textView.textColor = .martianGray
     textView.font = .preferredFont(forTextStyle: .body)
     textView.adjustsFontForContentSizeCategory = true
+    textView.setContentHuggingPriority(.init(249), for: .vertical)
     textView.snp.makeConstraints {
       $0.bottom.leading.trailing.equalToSuperview().inset(16)
-      $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+      $0.top.equalTo(titleContainerView.snp.bottom).offset(5)
     }
   }
 }

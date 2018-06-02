@@ -49,8 +49,8 @@ class CommentingViewController: UIViewController {
 // MARK: - Display Logic
 extension CommentingViewController: CommentingDisplayLogic {
   func displaySuccessfulCommentPost(comment: Comment) {
-    let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { _ in self.router?.unwindBack() }
-    let alert = UIAlertController.generic(title: "Comment", message: "Your comment was successfully sent.", preferredStyle: .alert, actions: [confirmAction])
+    let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { _ in self.router?.unwindBack() }  // TODO: - Localise
+    let alert = UIAlertController.generic(title: "Comment", message: "Your comment was successfully sent.", preferredStyle: .alert, actions: [confirmAction])  // TODO: - Localise
     alert.present(on: self)
   }
   
@@ -81,18 +81,21 @@ private extension CommentingViewController {
 // MARK: - Private Methods
 private extension CommentingViewController {
   func setupView() {
+    view.backgroundColor = .white
     setupNavigationBar()
     setupContentView()
   }
   
   func setupNavigationBar() {
+    navigationItem.largeTitleDisplayMode = .never
     navigationItem.leftBarButtonItem = UIBarButtonItem.dismiss(target: self, selector: #selector(dismissButtonTapped))
     navigationItem.rightBarButtonItem = UIBarButtonItem.send(target: self, selector: #selector(sendTapped))
-    navigationItem.rightBarButtonItem?.tintColor = .blue
+    navigationItem.rightBarButtonItem?.tintColor = .martianRed
   }
   
   func setupContentView() {
     view.addSubview(contentView)
-    contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
+    contentView.update(post.body)
+    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
   }
 }

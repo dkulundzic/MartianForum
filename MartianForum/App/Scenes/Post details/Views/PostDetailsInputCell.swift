@@ -29,11 +29,13 @@ private extension PostDetailsInputCell {
   }
   func setupTextField() {
     contentView.addSubview(textField)
+    textField.placeholder = "Add comment..." // TODO: - Localise
     textField.borderStyle = .roundedRect
     textField.textColor = .martianDarkGray
     textField.font = .preferredFont(forTextStyle: .body)
     textField.snp.makeConstraints {
       $0.leading.trailing.top.bottom.equalToSuperview().inset(16)
+      $0.height.equalTo(44)
     }
   }
 }
