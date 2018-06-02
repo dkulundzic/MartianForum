@@ -33,6 +33,11 @@
 		48E2F9D420C283840026D6D2 /* PostDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9D320C283840026D6D2 /* PostDetailsSection.swift */; };
 		48E2F9D620C2838A0026D6D2 /* PostDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9D520C2838A0026D6D2 /* PostDetailsRow.swift */; };
 		48E2F9D920C287360026D6D2 /* CommentsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9D820C287360026D6D2 /* CommentsWorker.swift */; };
+		48E2F9E320C28AB00026D6D2 /* CommentingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9DE20C28AB00026D6D2 /* CommentingContentView.swift */; };
+		48E2F9E420C28AB00026D6D2 /* CommentingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9DF20C28AB00026D6D2 /* CommentingPresenter.swift */; };
+		48E2F9E520C28AB00026D6D2 /* CommentingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */; };
+		48E2F9E620C28AB00026D6D2 /* CommentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */; };
+		48E2F9E720C28AB00026D6D2 /* CommentingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */; };
 		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
 		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
 		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
@@ -139,6 +144,11 @@
 		48E2F9D320C283840026D6D2 /* PostDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsSection.swift; sourceTree = "<group>"; };
 		48E2F9D520C2838A0026D6D2 /* PostDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsRow.swift; sourceTree = "<group>"; };
 		48E2F9D820C287360026D6D2 /* CommentsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsWorker.swift; sourceTree = "<group>"; };
+		48E2F9DE20C28AB00026D6D2 /* CommentingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingContentView.swift; sourceTree = "<group>"; };
+		48E2F9DF20C28AB00026D6D2 /* CommentingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingPresenter.swift; sourceTree = "<group>"; };
+		48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingRouter.swift; sourceTree = "<group>"; };
+		48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingViewController.swift; sourceTree = "<group>"; };
+		48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingInteractor.swift; sourceTree = "<group>"; };
 		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
@@ -368,6 +378,7 @@
 		48E2F9BE20C2828D0026D6D2 /* Post details */ = {
 			isa = PBXGroup;
 			children = (
+				48E2F9DD20C28A9F0026D6D2 /* Commenting */,
 				48E2F9CE20C283580026D6D2 /* Data source */,
 				48E2F9C920C282B90026D6D2 /* Views */,
 				48E2F9D720C2872D0026D6D2 /* Workers */,
@@ -404,6 +415,26 @@
 				48E2F9D820C287360026D6D2 /* CommentsWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		48E2F9DD20C28A9F0026D6D2 /* Commenting */ = {
+			isa = PBXGroup;
+			children = (
+				48E2F9E820C28ACA0026D6D2 /* Views */,
+				48E2F9DF20C28AB00026D6D2 /* CommentingPresenter.swift */,
+				48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */,
+				48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */,
+				48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */,
+			);
+			path = Commenting;
+			sourceTree = "<group>";
+		};
+		48E2F9E820C28ACA0026D6D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48E2F9DE20C28AB00026D6D2 /* CommentingContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		48F4DC3420BC739600ACAB5E /* Utilities */ = {
@@ -941,11 +972,15 @@
 				48F4DC9420BC7AB900ACAB5E /* PostsDataSource.swift in Sources */,
 				48F4DCBB20BC7F4700ACAB5E /* ClosureDefinition.swift in Sources */,
 				48F4DC5720BC77A200ACAB5E /* ReusableView.swift in Sources */,
+				48E2F9E420C28AB00026D6D2 /* CommentingPresenter.swift in Sources */,
+				48E2F9E720C28AB00026D6D2 /* CommentingInteractor.swift in Sources */,
 				48F4DC7220BC79C700ACAB5E /* PostsContentView.swift in Sources */,
 				48F71E7220BE7C010026D237 /* Photo.swift in Sources */,
+				48E2F9E520C28AB00026D6D2 /* CommentingRouter.swift in Sources */,
 				48E2F9D620C2838A0026D6D2 /* PostDetailsRow.swift in Sources */,
 				48F4DC9720BC7AFA00ACAB5E /* DataSourceProtocol.swift in Sources */,
 				48F4DCAA20BC7DEB00ACAB5E /* AlbumsSection.swift in Sources */,
+				48E2F9E320C28AB00026D6D2 /* CommentingContentView.swift in Sources */,
 				48F4DC4D20BC769A00ACAB5E /* UICollectionView-Martian.swift in Sources */,
 				48F4DC8420BC7A1300ACAB5E /* AlbumsInteractor.swift in Sources */,
 				48F4DC5420BC775C00ACAB5E /* LogLevel.swift in Sources */,
@@ -993,6 +1028,7 @@
 				48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */,
 				48F71E6E20BE7BFA0026D237 /* Todo.swift in Sources */,
 				48F4DCC220BC805C00ACAB5E /* NetworkError.swift in Sources */,
+				48E2F9E620C28AB00026D6D2 /* CommentingViewController.swift in Sources */,
 				48F4DCCD20BC82C300ACAB5E /* Resources.swift in Sources */,
 				48F4DC8320BC7A1300ACAB5E /* AlbumsViewController.swift in Sources */,
 				48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */,
