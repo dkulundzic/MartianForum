@@ -21,6 +21,7 @@
 		48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */; };
 		48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48E2F9B620C25BF70026D6D2 /* Localizable.strings */; };
 		48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */; };
+		48E2F9BB20C265F30026D6D2 /* PostUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9BA20C265F30026D6D2 /* PostUser.swift */; };
 		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
 		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
 		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
@@ -115,6 +116,7 @@
 		48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAuthSerializer.swift; sourceTree = "<group>"; };
 		48E2F9B520C25BF70026D6D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController-Martian.swift"; sourceTree = "<group>"; };
+		48E2F9BA20C265F30026D6D2 /* PostUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUser.swift; sourceTree = "<group>"; };
 		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
@@ -333,6 +335,14 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
+		48E2F9B920C265EC0026D6D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48E2F9BA20C265F30026D6D2 /* PostUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		48F4DC3420BC739600ACAB5E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +462,7 @@
 		48F4DC7820BC79EB00ACAB5E /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				48E2F9B920C265EC0026D6D2 /* Models */,
 				48CB205720C092CE005D1A25 /* Worker */,
 				48F4DC9220BC7AAF00ACAB5E /* Data source */,
 				48F4DC8F20BC7A3700ACAB5E /* Views */,
@@ -855,6 +866,7 @@
 				48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */,
 				48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */,
 				48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */,
+				48E2F9BB20C265F30026D6D2 /* PostUser.swift in Sources */,
 				48F4DC9420BC7AB900ACAB5E /* PostsDataSource.swift in Sources */,
 				48F4DCBB20BC7F4700ACAB5E /* ClosureDefinition.swift in Sources */,
 				48F4DC5720BC77A200ACAB5E /* ReusableView.swift in Sources */,

@@ -9,7 +9,8 @@
 import Foundation
 
 protocol PostsPresentationLogic {
-  func presentPosts(_ posts: [Post])
+  func presentPosts(_ posts: [PostUser])
+  func presentPost(_ post: Post, creationResult: Bool)
   func presentError(_ error: MartianError)
 }
 
@@ -19,8 +20,12 @@ class PostsPresenter {
 
 // MARK: - Presentation Logic
 extension PostsPresenter: PostsPresentationLogic {
-  func presentPosts(_ posts: [Post]) {
+  func presentPosts(_ posts: [PostUser]) {
     viewController?.displayPosts(posts)
+  }
+  
+  func presentPost(_ post: Post, creationResult: Bool) {
+    
   }
   
   func presentError(_ error: MartianError) {

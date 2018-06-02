@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PostsDisplayLogic: class {
-  func displayPosts(_ posts: [Post])
+  func displayPosts(_ posts: [PostUser])
   func displayError(title: String?, message: String?)
 }
 
@@ -41,7 +41,7 @@ class PostsViewController: UIViewController {
 
 // MARK: - Display Logic
 extension PostsViewController: PostsDisplayLogic {
-  func displayPosts(_ posts: [Post]) {
+  func displayPosts(_ posts: [PostUser]) {
     dataSource.addPosts(posts)
     contentView.tableView.reloadData()
   }

@@ -10,7 +10,7 @@ import Foundation
 
 class PostsDataSource: DataSourceProtocol {
   private(set) var sections = [PostsSection]()
-  private(set) var posts = [Post]()
+  private(set) var posts = [PostUser]()
   
   init() {
     buildSections()
@@ -18,7 +18,7 @@ class PostsDataSource: DataSourceProtocol {
 }
 
 extension PostsDataSource {
-  func addPosts(_ posts: [Post]) {
+  func addPosts(_ posts: [PostUser]) {
     self.posts = posts
     sections.removeAll()
     buildSections()
@@ -28,7 +28,7 @@ extension PostsDataSource {
 private extension PostsDataSource {
   func buildSections() {
     let rows = posts.map { PostsRow.post(
-      PostCell.ViewModel(title: $0.title, body: $0.body), $0)
+      PostCell.ViewModel(author: $0.user.username, title: $0.post.title), $0)
     }
     sections.append(PostsSection.posts(rows))
   }

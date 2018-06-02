@@ -34,14 +34,14 @@ extension User {
   
   struct Company: Codable {
     let name: String
-    let catchPrase: String
+    let catchPhrase: String
     let bs: String
   }
 }
 
 extension User.Address {  
   struct Geo: Codable {
-    let lat: Double
-    let lng: Double
+    let lat: String
+    let lng: String
   }
 }
