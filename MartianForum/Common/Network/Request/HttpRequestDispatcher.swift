@@ -48,23 +48,31 @@ extension HttpRequestDispatcher {
     request(path: path, requestMethod: requestMethod) { _, response, error in
       if let error = error {
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(NetworkError.wrapped(error)); return
+        return self.invokeOnMain {
+          failure?(NetworkError.wrapped(error))
+        }
       }
       
       guard let response = response as? HTTPURLResponse else {
         Logger.error("Encountered an error: \"\(NetworkError.generic.localizedDescription)\".")
-        failure?(NetworkError.generic); return
+        return self.invokeOnMain {
+          failure?(NetworkError.generic)
+        }
       }
       
       guard HttpRequest.StatusCode.valid.contains(response.statusCode) else {
         let error = NetworkError.invalidStatusCode(response.statusCode)
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(error); return
+        return self.invokeOnMain {
+          failure?(error)
+        }
       }
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
-      success?()
+      return self.invokeOnMain {
+        success?()
+      }
     }
   }
   
@@ -72,23 +80,31 @@ extension HttpRequestDispatcher {
     request(path: path, requestMethod: requestMethod, query: query) { _, response, error in
       if let error = error {
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(NetworkError.wrapped(error)); return
+        return self.invokeOnMain {
+          failure?(NetworkError.wrapped(error))
+        }
       }
       
       guard let response = response as? HTTPURLResponse else {
         Logger.error("Encountered an error: \"\(NetworkError.generic.localizedDescription)\".")
-        failure?(NetworkError.generic); return
+        return self.invokeOnMain {
+          failure?(NetworkError.generic)
+        }
       }
       
       guard HttpRequest.StatusCode.valid.contains(response.statusCode) else {
         let error = NetworkError.invalidStatusCode(response.statusCode)
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(error); return
+        return self.invokeOnMain {
+          failure?(error)
+        }
       }
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
-      success?()      
+      self.invokeOnMain {
+        success?()
+      }
     }
   }
   
@@ -96,28 +112,37 @@ extension HttpRequestDispatcher {
     request(path: path, requestMethod: requestMethod, query: query) { data, response, error in
       if let error = error {
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(NetworkError.wrapped(error))
-        return
+        return self.invokeOnMain {
+          failure?(NetworkError.wrapped(error))
+        }
       }
       
       guard let response = response as? HTTPURLResponse else {
         Logger.error("Encountered an error: \"\(NetworkError.generic.localizedDescription)\".")
-        failure?(NetworkError.generic); return
+        return self.invokeOnMain {
+          failure?(NetworkError.generic)
+        }
       }
       
       guard HttpRequest.StatusCode.valid.contains(response.statusCode) else {
         let error = NetworkError.invalidStatusCode(response.statusCode)
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
-        failure?(error); return
+        return self.invokeOnMain {
+          failure?(error)
+        }
       }
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
       guard let data = data, let entity = try? self.jsonDecoder.decode(T.self, from: data) else {
-        failure?(NetworkError.invalidData); return
+        return self.invokeOnMain {
+          failure?(NetworkError.invalidData)
+        }
       }
       
-      success?(entity)
+      self.invokeOnMain {
+        success?(entity)
+      }
     }
   }
 }
@@ -158,5 +183,9 @@ private extension HttpRequestDispatcher {
     }
     
     return componentsUrl
+  }
+
+  func invokeOnMain(_ closure: @escaping () -> Void) {
+    DispatchQueue.main.async(execute: closure)
   }
 }

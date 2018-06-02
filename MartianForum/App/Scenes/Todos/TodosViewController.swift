@@ -49,12 +49,14 @@ extension TodosViewController: TodosDisplayLogic {
 // MARK: - Private Methods
 private extension TodosViewController {
   func setupView() {
-    // setup title, background, navigation buttons, etc
+    title = "todos_tab_bar_title".localized()
+    tabBarItem.image = #imageLiteral(resourceName: "tab_bar_todos_icon")
+    view.backgroundColor = .white
     setupContentView()
   }
   
   func setupContentView() {
     view.addSubview(contentView)
-    // add constraints
+    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
   }
 }

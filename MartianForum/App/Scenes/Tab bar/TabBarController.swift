@@ -37,6 +37,10 @@ private extension TabBarController {
   }
   
   func setupTabs() {
-    // TODO: - 
+    viewControllers = [
+      UINavigationController(rootViewController: PostsViewController(delegate: self)),
+      UINavigationController(rootViewController: AlbumsViewController(delegate: self)),
+      UINavigationController(rootViewController: TodosViewController(delegate: self))      
+    ]
   }
 }

@@ -47,7 +47,8 @@ extension PostsViewController: PostsDisplayLogic {
   }
   
   func displayError(title: String?, message: String?) {
-    // TODO: - 
+    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
+    alert.present(on: self)
   }
 }
 
@@ -92,6 +93,9 @@ extension PostsViewController: UITableViewDelegate {
 // MARK: - Private Methods
 private extension PostsViewController {
   func setupView() {
+    title = "posts_tab_bar_title".localized()
+    tabBarItem.image = #imageLiteral(resourceName: "tab_bar_posts_icon")
+    view.backgroundColor = .white
     setupContentView()
   }
   
@@ -99,6 +103,6 @@ private extension PostsViewController {
     view.addSubview(contentView)
     contentView.tableView.dataSource = self
     contentView.tableView.delegate = self
-    contentView.tableView.register(PostCell.self)
+    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
   }
 }

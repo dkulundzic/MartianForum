@@ -9,7 +9,7 @@
 import UIKit
 
 class TodosContentView: UIView {
-  let collectionView = UICollectionView.autolayoutView()
+  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).autolayoutView()
   
   override init(frame: CGRect) {
     super.init(frame: frame)

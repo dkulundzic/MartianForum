@@ -49,12 +49,14 @@ extension AlbumsViewController: AlbumsDisplayLogic {
 // MARK: - Private Methods
 private extension AlbumsViewController {
   func setupView() {
-    // setup title, background, navigation buttons, etc
+    title = "albums_tab_bar_title".localized()
+    tabBarItem.image = #imageLiteral(resourceName: "tab_bar_albums_icon")
+    view.backgroundColor = .white
     setupContentView()
   }
   
   func setupContentView() {
     view.addSubview(contentView)
-    // add constraints
+    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
   }
 }

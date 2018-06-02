@@ -24,6 +24,15 @@ class PostsContentView: UIView {
 // MARK: - Private Methods
 private extension PostsContentView {
   func setupView() {
-    // TODO: - 
+    setupTableView()
+  }
+  
+  func setupTableView() {
+    addSubview(tableView)
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.alwaysBounceVertical = true
+    tableView.estimatedRowHeight = 100
+    tableView.register(PostCell.self)
+    tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
   }
 }

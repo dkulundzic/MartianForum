@@ -17,16 +17,14 @@ public final class AppearanceCustomisationProcess: StartupProcess {
 		UIScrollView.appearance().showsHorizontalScrollIndicator = false
 		
 		UINavigationBar.appearance().barTintColor = UIColor.white
-		UINavigationBar.appearance().tintColor = UIColor.white
-		UINavigationBar.appearance().setBackgroundImage(nil, for: .default)
-		UINavigationBar.appearance().isTranslucent = false
-		UINavigationBar.appearance().shadowImage = UIImage()
 		UINavigationBar.appearance().prefersLargeTitles = true
 		UINavigationBar.appearance().titleTextAttributes = [
-			NSAttributedStringKey.font: UIFont.systemFont(ofSize: 30),
-			NSAttributedStringKey.foregroundColor: UIColor.white
+			NSAttributedStringKey.foregroundColor: UIColor.martianGray
 		]
 		UINavigationBar.appearance().largeTitleTextAttributes = UINavigationBar.appearance().titleTextAttributes
+    
+    UITabBar.appearance().tintColor = .martianRed
+    UITabBar.appearance().barTintColor = .white
 		
 		completion(true)
 	}

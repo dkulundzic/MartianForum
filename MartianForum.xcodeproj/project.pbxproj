@@ -19,6 +19,8 @@
 		48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53120C06DBB004E90EE /* Requestable.swift */; };
 		48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */; };
 		48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */; };
+		48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48E2F9B620C25BF70026D6D2 /* Localizable.strings */; };
+		48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */; };
 		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
 		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
 		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
@@ -111,6 +113,8 @@
 		48CCE53120C06DBB004E90EE /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkServiceTests.swift; sourceTree = "<group>"; };
 		48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAuthSerializer.swift; sourceTree = "<group>"; };
+		48E2F9B520C25BF70026D6D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				48836FCC20BC5D8600BDC99E /* Assets.xcassets */,
+				48E2F9B120C25BDE0026D6D2 /* Localizations */,
 				48836FC420BC5D8600BDC99E /* Storyboards */,
 				48836FCA20BC5D8600BDC99E /* Other */,
 			);
@@ -320,6 +325,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		48E2F9B120C25BDE0026D6D2 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				48E2F9B620C25BF70026D6D2 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		48F4DC3420BC739600ACAB5E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +386,7 @@
 				48F4DC4B20BC769A00ACAB5E /* UITableView-Martian.swift */,
 				48F4DC4920BC769A00ACAB5E /* UIFont-Martian.swift */,
 				48F4DC4A20BC769A00ACAB5E /* UIView-Martian.swift */,
+				48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -732,6 +746,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48836FE020BC5D8600BDC99E /* Info.plist in Resources */,
+				48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */,
 				48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */,
 				48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */,
 			);
@@ -837,6 +852,7 @@
 				48F4DC4C20BC769A00ACAB5E /* UIBarButtonItem-Martian.swift in Sources */,
 				48F4DCB620BC7F0700ACAB5E /* HttpRequestDispatcher.swift in Sources */,
 				48F4DC5D20BC77EF00ACAB5E /* URLs.swift in Sources */,
+				48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */,
 				48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */,
 				48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */,
 				48F4DC9420BC7AB900ACAB5E /* PostsDataSource.swift in Sources */,
@@ -910,6 +926,17 @@
 			targetProxy = 489EA99020BC5A1100A39B77 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48E2F9B620C25BF70026D6D2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48E2F9B520C25BF70026D6D2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		489EA99620BC5A1100A39B77 /* Debug */ = {
