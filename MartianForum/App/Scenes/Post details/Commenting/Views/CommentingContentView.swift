@@ -44,6 +44,7 @@ private extension CommentingContentView {
     titleContainerView.backgroundColor = .martianLightGray
     titleContainerView.layer.cornerRadius = 10
     titleContainerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+    titleContainerView.dropShadow()
     titleContainerView.snp.makeConstraints {
       $0.top.leading.trailing.equalToSuperview()
     }
@@ -56,8 +57,7 @@ private extension CommentingContentView {
     titleLabel.adjustsFontForContentSizeCategory = true
     titleLabel.numberOfLines = 0
     titleLabel.snp.makeConstraints {
-      $0.top.bottom.equalToSuperview().inset(5)
-      $0.leading.trailing.equalToSuperview().inset(16)
+      $0.edges.equalToSuperview().inset(16)
     }
   }
   
@@ -65,12 +65,13 @@ private extension CommentingContentView {
     addSubview(textView)
     textView.textContainerInset = .zero
     textView.textColor = .martianGray
+    textView.tintColor = .martianRed
     textView.font = .preferredFont(forTextStyle: .body)
     textView.adjustsFontForContentSizeCategory = true
     textView.setContentHuggingPriority(.init(249), for: .vertical)
     textView.snp.makeConstraints {
       $0.bottom.leading.trailing.equalToSuperview().inset(16)
-      $0.top.equalTo(titleContainerView.snp.bottom).offset(5)
+      $0.top.equalTo(titleContainerView.snp.bottom).offset(16)
     }
   }
 }

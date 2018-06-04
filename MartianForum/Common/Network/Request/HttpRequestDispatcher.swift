@@ -45,7 +45,7 @@ class HttpRequestDispatcher {
 
 extension HttpRequestDispatcher {
   func request<T: Codable>(using path: String, requestMethod: HttpRequest.Method, body: T, success: ArgumentlessCompletion, failure: FailureCompletion) {
-    request(path: path, requestMethod: requestMethod) { _, response, error in
+    request(path: path, requestMethod: requestMethod, body: try? jsonEncoder.encode(body)) { _, response, error in
       if let error = error {
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
         return self.invokeOnMain {
@@ -142,12 +142,16 @@ extension HttpRequestDispatcher {
 }
 
 private extension HttpRequestDispatcher {
-  func request(path: String, requestMethod: HttpRequest.Method, query: [Query]? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+  func request(path: String, requestMethod: HttpRequest.Method, query: [Query]? = nil, body: Data? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
     do {
       let url = try self.url(for: path, requestMethod: requestMethod, query: query)
       
       var request = URLRequest(url: url)
       request.httpMethod = requestMethod.rawValue
+      if let body = body, let object = try? JSONSerialization.jsonObject(with: body, options: []) {
+        Logger.debug("Request body: \(object)")
+      }
+      request.httpBody = body
       request = requestSerializers.reduce(request, { request, serializer -> URLRequest in
         return serializer.serialize(request: request)
       })

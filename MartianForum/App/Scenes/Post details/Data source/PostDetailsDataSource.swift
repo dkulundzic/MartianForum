@@ -20,6 +20,11 @@ class PostDetailsDataSource: DataSourceProtocol {
 }
 
 extension PostDetailsDataSource {
+  func addComment(_ comment: Comment) {
+    comments.append(comment)
+    buildSections()
+  }
+  
   func addComments(_ comments: [Comment]) {
     self.comments = comments
     buildSections()

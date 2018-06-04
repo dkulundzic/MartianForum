@@ -35,7 +35,7 @@ private extension PostDetailsInputCell {
     textField.font = .preferredFont(forTextStyle: .body)
     textField.snp.makeConstraints {
       $0.leading.trailing.top.bottom.equalToSuperview().inset(16)
-      $0.height.equalTo(44)
+      $0.height.equalTo(44).priority(999)
     }
   }
 }

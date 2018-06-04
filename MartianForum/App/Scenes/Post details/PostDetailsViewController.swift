@@ -108,6 +108,8 @@ private extension PostDetailsViewController {
   }
   
   func handleCommentPost(comment: Comment) {
-    
+    dataSource.addComment(comment)
+    tableView.reloadData()
+    interactor?.loadComments(for: dataSource.post.post)
   }
 }

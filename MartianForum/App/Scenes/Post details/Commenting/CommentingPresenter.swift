@@ -10,6 +10,7 @@ import Foundation
 
 protocol CommentingPresentationLogic {
   func presentSuccessfulCommentPost(comment: Comment)
+  func presentNetworkOperation(running: Bool)
   func presentError(_ error: MartianError)
 }
 
@@ -21,6 +22,10 @@ class CommentingPresenter {
 extension CommentingPresenter: CommentingPresentationLogic {
   func presentSuccessfulCommentPost(comment: Comment) {
     viewController?.displaySuccessfulCommentPost(comment: comment)
+  }
+  
+  func presentNetworkOperation(running: Bool) {
+    viewController?.displayNetworkOperation(running: running)    
   }
   
   func presentError(_ error: MartianError) {

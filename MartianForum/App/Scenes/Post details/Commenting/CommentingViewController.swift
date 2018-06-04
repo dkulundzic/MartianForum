@@ -10,6 +10,7 @@ import UIKit
 
 protocol CommentingDisplayLogic: class {
   func displaySuccessfulCommentPost(comment: Comment)
+  func displayNetworkOperation(running: Bool)
   func displayError(title: String?, message: String?)
 }
 
@@ -23,6 +24,7 @@ class CommentingViewController: UIViewController {
   
   init(post: Post, handler: CommentPostHandler, delegate: CommentingRouterDelegate?) {
     self.post = post
+    self.handler = handler
     super.init(nibName: nil, bundle: nil)
     let interactor = CommentingInteractor()
     let presenter = CommentingPresenter()
@@ -34,6 +36,7 @@ class CommentingViewController: UIViewController {
     self.interactor = interactor
     self.router = router
     setupView()
+    setupKeyboardObserving()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -49,9 +52,16 @@ class CommentingViewController: UIViewController {
 // MARK: - Display Logic
 extension CommentingViewController: CommentingDisplayLogic {
   func displaySuccessfulCommentPost(comment: Comment) {
+    handler?(comment)
     let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { _ in self.router?.unwindBack() }  // TODO: - Localise
     let alert = UIAlertController.generic(title: "Comment", message: "Your comment was successfully sent.", preferredStyle: .alert, actions: [confirmAction])  // TODO: - Localise
     alert.present(on: self)
+  }
+  
+  func displayNetworkOperation(running: Bool) {
+    let barButton: UIBarButtonItem = running ? .loadingIndicator(): .send(target: self, selector: #selector(sendTapped))
+    navigationItem.setRightBarButton(barButton, animated: true)
+    navigationItem.leftBarButtonItem?.isEnabled = !running
   }
   
   func displayError(title: String?, message: String?) {
@@ -70,10 +80,12 @@ extension CommentingViewController: UITextViewDelegate {
 // MARK: - Actions
 private extension CommentingViewController {
   @objc func dismissButtonTapped() {
+    contentView.textView.resignFirstResponder()
     router?.unwindBack()
   }
   
   @objc func sendTapped() {
+    contentView.textView.resignFirstResponder()
     interactor?.postComment(contentView.textView.text, for: post)
   }
 }
@@ -88,8 +100,8 @@ private extension CommentingViewController {
   
   func setupNavigationBar() {
     navigationItem.largeTitleDisplayMode = .never
-    navigationItem.leftBarButtonItem = UIBarButtonItem.dismiss(target: self, selector: #selector(dismissButtonTapped))
-    navigationItem.rightBarButtonItem = UIBarButtonItem.send(target: self, selector: #selector(sendTapped))
+    navigationItem.leftBarButtonItem = .dismiss(target: self, selector: #selector(dismissButtonTapped))
+    navigationItem.rightBarButtonItem = .send(target: self, selector: #selector(sendTapped))
     navigationItem.rightBarButtonItem?.tintColor = .martianRed
   }
   
@@ -97,5 +109,16 @@ private extension CommentingViewController {
     view.addSubview(contentView)
     contentView.update(post.body)
     contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
+  }
+
+  func setupKeyboardObserving() {
+    _ = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) { [weak self] notification in
+      guard let keyboardBounds = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+      self?.contentView.textView.contentInset.bottom = keyboardBounds.height
+    }
+    
+    _ = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: nil) { [weak self] _ in
+      self?.contentView.textView.contentInset = .zero
+    }
   }
 }
