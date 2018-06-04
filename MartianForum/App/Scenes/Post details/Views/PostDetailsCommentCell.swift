@@ -9,7 +9,7 @@
 import UIKit
 
 class PostDetailsCommentCell: UITableViewCell {
-  typealias ViewModel = (author: String, body: String?)
+  typealias ViewModel = (author: String, body: String)
   
   private let authorLabel = UILabel.autolayoutView()
   private let bodyLabel = UILabel.autolayoutView()
@@ -42,6 +42,7 @@ private extension PostDetailsCommentCell {
     contentView.addSubview(authorLabel)
     authorLabel.textColor = .martianRed
     authorLabel.font = .preferredFont(forTextStyle: .caption1)
+    authorLabel.numberOfLines = 0
     authorLabel.adjustsFontForContentSizeCategory = true
     authorLabel.snp.makeConstraints {
       $0.leading.equalToSuperview().inset(32)

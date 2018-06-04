@@ -9,7 +9,7 @@
 import UIKit
 
 class PostDetailsTitleCell: UITableViewCell {
-  typealias ViewModel = (author: String, title: String?, body: String?)
+  typealias ViewModel = (author: String, title: String, body: String)
   
   private let authorLabel = UILabel.autolayoutView()
   private let titleLabel = UILabel.autolayoutView()

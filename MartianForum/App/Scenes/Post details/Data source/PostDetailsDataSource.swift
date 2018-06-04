@@ -29,6 +29,22 @@ extension PostDetailsDataSource {
     self.comments = comments
     buildSections()
   }
+  
+  func copyText(at indexPath: IndexPath) -> String? {
+    guard let row = section(at: indexPath.section)?.row(at: indexPath.row) else {
+      Logger.debug("Couldn't extract the row for the specified comment at \(indexPath.debugDescription).")
+      return nil
+    }
+    
+    switch row {
+    case .title(_, let title, let body):
+      return "\(title)\n\(body)"
+    case .comment(_, let body):
+      return body
+    case .input:
+      return nil
+    }
+  }
 }
 
 private extension PostDetailsDataSource {
@@ -41,7 +57,7 @@ private extension PostDetailsDataSource {
     )
     rows.append(contentsOf:
       comments.map {
-        PostDetailsRow.comment(PostDetailsCommentCell.ViewModel("\($0.name)\n(\($0.email))", $0.body))
+        PostDetailsRow.comment(PostDetailsCommentCell.ViewModel("\($0.email)", $0.body))
       }
     )
     rows.append(.input)

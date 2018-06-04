@@ -37,7 +37,23 @@ class PostDetailsViewController: UITableViewController {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+}
+
+// MARK: - Display Logic
+extension PostDetailsViewController: PostDetailsDisplayLogic {
+  func displayComments(_ comments: [Comment]) {
+    dataSource.addComments(comments)
+    tableView.reloadData()
+  }
   
+  func displayError(title: String?, message: String?) {
+    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
+    alert.present(on: self)
+  }
+}
+
+// MARK: - UITableViewDataSource
+extension PostDetailsViewController {
   override func numberOfSections(in tableView: UITableView) -> Int {
     return dataSource.numberOfSections()
   }
@@ -66,18 +82,22 @@ class PostDetailsViewController: UITableViewController {
       return cell
     }
   }
+
 }
 
-// MARK: - Display Logic
-extension PostDetailsViewController: PostDetailsDisplayLogic {
-  func displayComments(_ comments: [Comment]) {
-    dataSource.addComments(comments)
-    tableView.reloadData()
+// MARK: - UITableViewDelegate
+extension PostDetailsViewController {
+  override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+    return action == #selector(copy(_:))
   }
   
-  func displayError(title: String?, message: String?) {
-    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
-    alert.present(on: self)
+  override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+    guard action == #selector(copy(_:)) else { return }
+    UIPasteboard.general.string = dataSource.copyText(at: indexPath)
+  }
+  
+  override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
 }
 
