@@ -1,7 +1,15 @@
+/* General */
 "default_alert_cancel_title" = "Ok";
+
+/* Tab bar */
 "posts_tab_bar_title" = "Posts";
 "albums_tab_bar_title" = "Albums";
 "todos_tab_bar_title" = "Todos";
 
 /* Posts */
 "posts_author_title_label_format" = "By %@";
+"posts_commenting_placeholder" = "Add comment...";
+
+/* Commenting */
+"comment_success_alert_title" = "Comment";
+"comment_success_alert_message" = "Your comment was successfully sent.";

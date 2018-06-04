@@ -53,8 +53,11 @@ class CommentingViewController: UIViewController {
 extension CommentingViewController: CommentingDisplayLogic {
   func displaySuccessfulCommentPost(comment: Comment) {
     handler?(comment)
-    let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { _ in self.router?.unwindBack() }  // TODO: - Localise
-    let alert = UIAlertController.generic(title: "Comment", message: "Your comment was successfully sent.", preferredStyle: .alert, actions: [confirmAction])  // TODO: - Localise
+    let confirmAction = UIAlertAction(title: "default_alert_cancel_title".localized(), style: .cancel) { _ in self.router?.unwindBack() }  // TODO: - Localise
+    let alert = UIAlertController.generic(title: "comment_success_alert_title".localized(),
+                                          message: "comment_success_alert_message".localized(),
+                                          preferredStyle: .alert,
+                                          actions: [confirmAction])
     alert.present(on: self)
   }
   
