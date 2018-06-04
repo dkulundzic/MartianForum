@@ -9,7 +9,8 @@
 import Foundation
 
 protocol AlbumsPresentationLogic {
-  
+  func presentAlbumsAndPhotos(_ albumPhotos: [AlbumPhoto])
+  func presentError(_ error: MartianError)
 }
 
 class AlbumsPresenter {
@@ -18,5 +19,11 @@ class AlbumsPresenter {
 
 // MARK: - Presentation Logic
 extension AlbumsPresenter: AlbumsPresentationLogic {
+  func presentAlbumsAndPhotos(_ albumPhotos: [AlbumPhoto]) {
+    viewController?.displayAlbumsAndPhotos(albumPhotos)
+  }
   
+  func presentError(_ error: MartianError) {
+    viewController?.displayError(title: error.localisedTitle, message: error.localizedDescription)
+  }
 }

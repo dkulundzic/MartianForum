@@ -9,13 +9,15 @@
 import UIKit
 
 protocol AlbumsDisplayLogic: class {
-  
+  func displayAlbumsAndPhotos(_ albumPhotos: [AlbumPhoto])
+  func displayError(title: String?, message: String?)
 }
 
-class AlbumsViewController: UIViewController {
+class AlbumsViewController: UICollectionViewController {
   var interactor: AlbumsBusinessLogic?
   var router: AlbumsRoutingLogic?
   private let contentView = AlbumsContentView.autolayoutView()
+  private let dataSource = AlbumsDataSource()
   
   init(delegate: AlbumsRouterDelegate?) {
     super.init(nibName: nil, bundle: nil)
@@ -29,6 +31,7 @@ class AlbumsViewController: UIViewController {
     self.interactor = interactor
     self.router = router
     setupView()
+    interactor.loadAlbumsAndPhotos()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -43,7 +46,28 @@ class AlbumsViewController: UIViewController {
 
 // MARK: - Display Logic
 extension AlbumsViewController: AlbumsDisplayLogic {
+  func displayAlbumsAndPhotos(_ albumPhotos: [AlbumPhoto]) {
+    
+  }
   
+  func displayError(title: String?, message: String?) {
+    
+  }
+}
+
+// MARK: - Display Logic
+extension AlbumsViewController {
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return dataSource.numberOfSections()
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return dataSource.numberOfRows(in: section)
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    return UICollectionViewCell()
+  }
 }
 
 // MARK: - Private Methods
@@ -57,6 +81,8 @@ private extension AlbumsViewController {
   
   func setupContentView() {
     view.addSubview(contentView)
-    contentView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
+    contentView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
   }
 }

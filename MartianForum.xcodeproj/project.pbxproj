@@ -39,6 +39,10 @@
 		48E2F9E520C28AB00026D6D2 /* CommentingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */; };
 		48E2F9E620C28AB00026D6D2 /* CommentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */; };
 		48E2F9E720C28AB00026D6D2 /* CommentingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */; };
+		48ECD54320C5E9CB00DF14BF /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */; };
+		48ECD54620C5EBA100DF14BF /* AlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54520C5EBA100DF14BF /* AlbumPhoto.swift */; };
+		48ECD54920C5ECDC00DF14BF /* AlbumPhotosWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54820C5ECDC00DF14BF /* AlbumPhotosWorker.swift */; };
+		48ECD54B20C5EF6D00DF14BF /* AlbumsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */; };
 		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
 		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
 		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
@@ -63,7 +67,6 @@
 		48F4DC7420BC79C700ACAB5E /* PostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC6F20BC79C700ACAB5E /* PostsRouter.swift */; };
 		48F4DC7520BC79C700ACAB5E /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7020BC79C700ACAB5E /* PostsViewController.swift */; };
 		48F4DC7620BC79C700ACAB5E /* PostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7120BC79C700ACAB5E /* PostsInteractor.swift */; };
-		48F4DC8020BC7A1300ACAB5E /* AlbumsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7B20BC7A1300ACAB5E /* AlbumsContentView.swift */; };
 		48F4DC8120BC7A1300ACAB5E /* AlbumsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7C20BC7A1300ACAB5E /* AlbumsPresenter.swift */; };
 		48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7D20BC7A1300ACAB5E /* AlbumsRouter.swift */; };
 		48F4DC8320BC7A1300ACAB5E /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7E20BC7A1300ACAB5E /* AlbumsViewController.swift */; };
@@ -151,6 +154,10 @@
 		48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingRouter.swift; sourceTree = "<group>"; };
 		48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingViewController.swift; sourceTree = "<group>"; };
 		48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingInteractor.swift; sourceTree = "<group>"; };
+		48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
+		48ECD54520C5EBA100DF14BF /* AlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhoto.swift; sourceTree = "<group>"; };
+		48ECD54820C5ECDC00DF14BF /* AlbumPhotosWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotosWorker.swift; sourceTree = "<group>"; };
+		48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsContentView.swift; sourceTree = "<group>"; };
 		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
@@ -175,7 +182,6 @@
 		48F4DC6F20BC79C700ACAB5E /* PostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRouter.swift; sourceTree = "<group>"; };
 		48F4DC7020BC79C700ACAB5E /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		48F4DC7120BC79C700ACAB5E /* PostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractor.swift; sourceTree = "<group>"; };
-		48F4DC7B20BC7A1300ACAB5E /* AlbumsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsContentView.swift; sourceTree = "<group>"; };
 		48F4DC7C20BC7A1300ACAB5E /* AlbumsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsPresenter.swift; sourceTree = "<group>"; };
 		48F4DC7D20BC7A1300ACAB5E /* AlbumsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRouter.swift; sourceTree = "<group>"; };
 		48F4DC7E20BC7A1300ACAB5E /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +446,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		48ECD54420C5EB9B00DF14BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48ECD54520C5EBA100DF14BF /* AlbumPhoto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48ECD54720C5ECCD00DF14BF /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				48ECD54820C5ECDC00DF14BF /* AlbumPhotosWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		48F4DC3420BC739600ACAB5E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,8 +611,10 @@
 		48F4DC7A20BC79F500ACAB5E /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				48ECD54420C5EB9B00DF14BF /* Models */,
 				48F4DCA620BC7DD300ACAB5E /* Data source */,
 				48F4DC9020BC7A3B00ACAB5E /* Views */,
+				48ECD54720C5ECCD00DF14BF /* Worker */,
 				48F4DC7C20BC7A1300ACAB5E /* AlbumsPresenter.swift */,
 				48F4DC7D20BC7A1300ACAB5E /* AlbumsRouter.swift */,
 				48F4DC7E20BC7A1300ACAB5E /* AlbumsViewController.swift */,
@@ -611,7 +635,8 @@
 		48F4DC9020BC7A3B00ACAB5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				48F4DC7B20BC7A1300ACAB5E /* AlbumsContentView.swift */,
+				48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */,
+				48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -929,12 +954,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -951,8 +978,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48ECD54320C5E9CB00DF14BF /* AlbumPhotoCell.swift in Sources */,
 				48F4DC8D20BC7A2300ACAB5E /* TodosViewController.swift in Sources */,
-				48F4DC8020BC7A1300ACAB5E /* AlbumsContentView.swift in Sources */,
 				48F4DCA320BC7C8800ACAB5E /* PostCell.swift in Sources */,
 				48E2F9CB20C2834D0026D6D2 /* PostDetailsTitleCell.swift in Sources */,
 				48CB205920C092D5005D1A25 /* PostsWorker.swift in Sources */,
@@ -968,6 +995,7 @@
 				48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */,
 				48F4DC4C20BC769A00ACAB5E /* UIBarButtonItem-Martian.swift in Sources */,
 				48F4DCB620BC7F0700ACAB5E /* HttpRequestDispatcher.swift in Sources */,
+				48ECD54920C5ECDC00DF14BF /* AlbumPhotosWorker.swift in Sources */,
 				48F4DC5D20BC77EF00ACAB5E /* URLs.swift in Sources */,
 				48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */,
 				48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */,
@@ -1002,6 +1030,7 @@
 				48E2F9CD20C283550026D6D2 /* PostDetailsCommentCell.swift in Sources */,
 				48E2F9D220C2836F0026D6D2 /* PostDetailsDataSource.swift in Sources */,
 				48E2F9C620C282B20026D6D2 /* PostDetailsRouter.swift in Sources */,
+				48ECD54B20C5EF6D00DF14BF /* AlbumsContentView.swift in Sources */,
 				48E2F9C720C282B20026D6D2 /* PostDetailsViewController.swift in Sources */,
 				48E2F9C520C282B20026D6D2 /* PostDetailsPresenter.swift in Sources */,
 				48F4DC8B20BC7A2300ACAB5E /* TodosPresenter.swift in Sources */,
@@ -1023,6 +1052,7 @@
 				48F4DC5020BC769A00ACAB5E /* UITableView-Martian.swift in Sources */,
 				48F4DCBE20BC7F7700ACAB5E /* MartianError.swift in Sources */,
 				48F71E6A20BE7BF30026D237 /* Post.swift in Sources */,
+				48ECD54620C5EBA100DF14BF /* AlbumPhoto.swift in Sources */,
 				48F71E6C20BE7BF60026D237 /* Comment.swift in Sources */,
 				48F4DC6720BC78BB00ACAB5E /* StartupProcessService.swift in Sources */,
 				48F4DC6620BC78BB00ACAB5E /* AppearanceCustomisationProcess.swift in Sources */,

@@ -8,16 +8,29 @@
 
 import Foundation
 
-struct AlbumsDataSource: DataSourceProtocol {
+class AlbumsDataSource: DataSourceProtocol {
   var sections = [AlbumsSection]()
+  private var albumPhotos = [AlbumPhoto]()
   
   init() {
     buildSections()
   }
 }
 
+extension AlbumsDataSource {
+  func addAlbumPhotos(_ albumPhotos: [AlbumPhoto]) {
+    self.albumPhotos = albumPhotos
+    buildSections()
+  }
+}
+
 private extension AlbumsDataSource {
-  func buildSections() {
-    // TODO: - 
+  func buildSections() {    
+    sections = albumPhotos.map { albumPhoto -> AlbumsSection in
+      let rows = albumPhoto.photo.map {
+        (AlbumsRow.photo(AlbumPhotoCell.ViewModel(placeholder: nil, thumbnailUrl: $0.thumbnailUrl, imageUrl: $0.url)))
+      }
+      return AlbumsSection.photo(rows)
+    }
   }
 }

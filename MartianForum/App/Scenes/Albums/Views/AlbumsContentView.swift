@@ -2,18 +2,18 @@
 //  AlbumsContentView.swift
 //  MartianForum
 //
-//  Created by Domagoj Kulundzic on 28/05/2018.
+//  Created by Domagoj Kulundzic on 05/06/2018.
 //  Copyright © 2018 Codeopolis. All rights reserved.
 //
 
 import UIKit
 
-class AlbumsContentView: UIView {  
-  let tableView = UITableView.autolayoutView()
+class AlbumsContentView: UIView {
+  
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
+    setupViews()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -21,9 +21,17 @@ class AlbumsContentView: UIView {
   }
 }
 
-// MARK: - Private Methods
 private extension AlbumsContentView {
-  func setupView() {
-    // TODO: - 
+  func setupViews() {
+    setupScrollView()
+    setupStackView()
+  }
+  
+  func setupScrollView() {
+    
+  }
+  
+  func setupStackView() {
+    
   }
 }
