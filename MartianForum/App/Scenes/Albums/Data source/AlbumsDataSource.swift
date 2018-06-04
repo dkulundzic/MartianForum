@@ -25,12 +25,10 @@ extension AlbumsDataSource {
 }
 
 private extension AlbumsDataSource {
-  func buildSections() {    
-    sections = albumPhotos.map { albumPhoto -> AlbumsSection in
-      let rows = albumPhoto.photo.map {
-        (AlbumsRow.photo(AlbumPhotoCell.ViewModel(placeholder: nil, thumbnailUrl: $0.thumbnailUrl, imageUrl: $0.url)))
-      }
-      return AlbumsSection.photo(rows)
+  func buildSections() {
+    let rows = albumPhotos.enumerated().map {
+      return AlbumsRow.photo(PhotosViewController(index: $0.offset, photos: $0.element.photos))
     }
+    sections.append(.photo(rows))
   }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 enum AlbumsRow {
-  case photo(AlbumPhotoCell.ViewModel)
+  case photo(PhotosViewController)
 }

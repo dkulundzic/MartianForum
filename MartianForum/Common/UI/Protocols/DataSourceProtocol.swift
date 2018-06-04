@@ -41,6 +41,10 @@ extension DataSourceProtocol {
 	func section(at index: Int) -> Section? {
 		return sections[safe: index]
 	}
+  
+  func row(at indexPath: IndexPath) -> Section.Row? {
+    return sections[safe: indexPath.section]?.rows[indexPath.row]
+  }
 }
 
 protocol SectionProtocol {

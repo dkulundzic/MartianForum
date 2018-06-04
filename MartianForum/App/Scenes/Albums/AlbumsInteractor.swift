@@ -23,7 +23,7 @@ extension AlbumsInteractor: AlbumsBusinessLogic {
     worker.retrieveAlbumsAndPhotos().then { [weak self] albumsAndPhotos in
       self?.presenter?.presentAlbumsAndPhotos(albumsAndPhotos)
     }.catch { [weak self] error in
-        self?.presenter?.presentError(NetworkError.wrapped(error))
+      self?.presenter?.presentError(NetworkError.wrapped(error))
     }
   }
 }

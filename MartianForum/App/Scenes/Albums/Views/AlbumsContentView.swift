@@ -9,7 +9,7 @@
 import UIKit
 
 class AlbumsContentView: UIView {
-  
+  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).autolayoutView()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -23,15 +23,10 @@ class AlbumsContentView: UIView {
 
 private extension AlbumsContentView {
   func setupViews() {
-    setupScrollView()
-    setupStackView()
+    setupCollectionView()
   }
   
-  func setupScrollView() {
-    
-  }
-  
-  func setupStackView() {
-    
+  func setupCollectionView() {
+    collectionView.alwaysBounceVertical = true
   }
 }

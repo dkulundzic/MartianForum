@@ -39,10 +39,17 @@
 		48E2F9E520C28AB00026D6D2 /* CommentingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */; };
 		48E2F9E620C28AB00026D6D2 /* CommentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */; };
 		48E2F9E720C28AB00026D6D2 /* CommentingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */; };
-		48ECD54320C5E9CB00DF14BF /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */; };
+		48ECD54320C5E9CB00DF14BF /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54220C5E9CB00DF14BF /* PhotoCell.swift */; };
 		48ECD54620C5EBA100DF14BF /* AlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54520C5EBA100DF14BF /* AlbumPhoto.swift */; };
 		48ECD54920C5ECDC00DF14BF /* AlbumPhotosWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54820C5ECDC00DF14BF /* AlbumPhotosWorker.swift */; };
 		48ECD54B20C5EF6D00DF14BF /* AlbumsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */; };
+		48ECD55920C5F1A400DF14BF /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD55420C5F1A400DF14BF /* PhotosPresenter.swift */; };
+		48ECD55B20C5F1A400DF14BF /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD55620C5F1A400DF14BF /* PhotosViewController.swift */; };
+		48ECD55C20C5F1A400DF14BF /* PhotosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD55720C5F1A400DF14BF /* PhotosInteractor.swift */; };
+		48ECD56020C5F20A00DF14BF /* PhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD55F20C5F20A00DF14BF /* PhotosDataSource.swift */; };
+		48ECD56220C5F21000DF14BF /* PhotosSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD56120C5F21000DF14BF /* PhotosSection.swift */; };
+		48ECD56420C5F21700DF14BF /* PhotosRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD56320C5F21700DF14BF /* PhotosRow.swift */; };
+		48ECD56820C5F85600DF14BF /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD56720C5F85600DF14BF /* AlbumCell.swift */; };
 		48F4DC4220BC73D100ACAB5E /* UIColor-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */; };
 		48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4320BC765F00ACAB5E /* String-Martian.swift */; };
 		48F4DC4620BC767C00ACAB5E /* Collection-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */; };
@@ -154,10 +161,17 @@
 		48E2F9E020C28AB00026D6D2 /* CommentingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingRouter.swift; sourceTree = "<group>"; };
 		48E2F9E120C28AB00026D6D2 /* CommentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingViewController.swift; sourceTree = "<group>"; };
 		48E2F9E220C28AB00026D6D2 /* CommentingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentingInteractor.swift; sourceTree = "<group>"; };
-		48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
+		48ECD54220C5E9CB00DF14BF /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		48ECD54520C5EBA100DF14BF /* AlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhoto.swift; sourceTree = "<group>"; };
 		48ECD54820C5ECDC00DF14BF /* AlbumPhotosWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotosWorker.swift; sourceTree = "<group>"; };
 		48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsContentView.swift; sourceTree = "<group>"; };
+		48ECD55420C5F1A400DF14BF /* PhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPresenter.swift; sourceTree = "<group>"; };
+		48ECD55620C5F1A400DF14BF /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		48ECD55720C5F1A400DF14BF /* PhotosInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosInteractor.swift; sourceTree = "<group>"; };
+		48ECD55F20C5F20A00DF14BF /* PhotosDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataSource.swift; sourceTree = "<group>"; };
+		48ECD56120C5F21000DF14BF /* PhotosSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSection.swift; sourceTree = "<group>"; };
+		48ECD56320C5F21700DF14BF /* PhotosRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRow.swift; sourceTree = "<group>"; };
+		48ECD56720C5F85600DF14BF /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		48F4DC4120BC73D100ACAB5E /* UIColor-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4320BC765F00ACAB5E /* String-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Martian.swift"; sourceTree = "<group>"; };
 		48F4DC4520BC767C00ACAB5E /* Collection-Martian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection-Martian.swift"; sourceTree = "<group>"; };
@@ -462,6 +476,36 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
+		48ECD55220C5F18C00DF14BF /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				48ECD55D20C5F1D000DF14BF /* Data source */,
+				48ECD55E20C5F1D500DF14BF /* Views */,
+				48ECD55420C5F1A400DF14BF /* PhotosPresenter.swift */,
+				48ECD55620C5F1A400DF14BF /* PhotosViewController.swift */,
+				48ECD55720C5F1A400DF14BF /* PhotosInteractor.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		48ECD55D20C5F1D000DF14BF /* Data source */ = {
+			isa = PBXGroup;
+			children = (
+				48ECD55F20C5F20A00DF14BF /* PhotosDataSource.swift */,
+				48ECD56120C5F21000DF14BF /* PhotosSection.swift */,
+				48ECD56320C5F21700DF14BF /* PhotosRow.swift */,
+			);
+			path = "Data source";
+			sourceTree = "<group>";
+		};
+		48ECD55E20C5F1D500DF14BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48ECD54220C5E9CB00DF14BF /* PhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		48F4DC3420BC739600ACAB5E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +655,7 @@
 		48F4DC7A20BC79F500ACAB5E /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				48ECD55220C5F18C00DF14BF /* Photos */,
 				48ECD54420C5EB9B00DF14BF /* Models */,
 				48F4DCA620BC7DD300ACAB5E /* Data source */,
 				48F4DC9020BC7A3B00ACAB5E /* Views */,
@@ -636,7 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				48ECD54A20C5EF6D00DF14BF /* AlbumsContentView.swift */,
-				48ECD54220C5E9CB00DF14BF /* AlbumPhotoCell.swift */,
+				48ECD56720C5F85600DF14BF /* AlbumCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -978,7 +1023,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48ECD54320C5E9CB00DF14BF /* AlbumPhotoCell.swift in Sources */,
+				48ECD54320C5E9CB00DF14BF /* PhotoCell.swift in Sources */,
 				48F4DC8D20BC7A2300ACAB5E /* TodosViewController.swift in Sources */,
 				48F4DCA320BC7C8800ACAB5E /* PostCell.swift in Sources */,
 				48E2F9CB20C2834D0026D6D2 /* PostDetailsTitleCell.swift in Sources */,
@@ -995,14 +1040,17 @@
 				48F4DC4420BC765F00ACAB5E /* String-Martian.swift in Sources */,
 				48F4DC4C20BC769A00ACAB5E /* UIBarButtonItem-Martian.swift in Sources */,
 				48F4DCB620BC7F0700ACAB5E /* HttpRequestDispatcher.swift in Sources */,
+				48ECD56820C5F85600DF14BF /* AlbumCell.swift in Sources */,
 				48ECD54920C5ECDC00DF14BF /* AlbumPhotosWorker.swift in Sources */,
 				48F4DC5D20BC77EF00ACAB5E /* URLs.swift in Sources */,
 				48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */,
 				48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */,
 				48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */,
 				48E2F9BB20C265F30026D6D2 /* PostUser.swift in Sources */,
+				48ECD55920C5F1A400DF14BF /* PhotosPresenter.swift in Sources */,
 				48F4DC9420BC7AB900ACAB5E /* PostsDataSource.swift in Sources */,
 				48F4DCBB20BC7F4700ACAB5E /* ClosureDefinition.swift in Sources */,
+				48ECD56220C5F21000DF14BF /* PhotosSection.swift in Sources */,
 				48F4DC5720BC77A200ACAB5E /* ReusableView.swift in Sources */,
 				48E2F9E420C28AB00026D6D2 /* CommentingPresenter.swift in Sources */,
 				48E2F9E720C28AB00026D6D2 /* CommentingInteractor.swift in Sources */,
@@ -1035,6 +1083,7 @@
 				48E2F9C520C282B20026D6D2 /* PostDetailsPresenter.swift in Sources */,
 				48F4DC8B20BC7A2300ACAB5E /* TodosPresenter.swift in Sources */,
 				48F4DC7620BC79C700ACAB5E /* PostsInteractor.swift in Sources */,
+				48ECD56020C5F20A00DF14BF /* PhotosDataSource.swift in Sources */,
 				48F4DC4E20BC769A00ACAB5E /* UIFont-Martian.swift in Sources */,
 				48E2F9C820C282B20026D6D2 /* PostDetailsInteractor.swift in Sources */,
 				48CB205420C08D7A005D1A25 /* HttpRequestQueryBuilder.swift in Sources */,
@@ -1049,6 +1098,7 @@
 				48F4DC6020BC781500ACAB5E /* URL-Martian.swift in Sources */,
 				48F4DC6820BC78BB00ACAB5E /* StartupProcess.swift in Sources */,
 				48F4DCA820BC7DDC00ACAB5E /* AlbumsDataSource.swift in Sources */,
+				48ECD56420C5F21700DF14BF /* PhotosRow.swift in Sources */,
 				48F4DC5020BC769A00ACAB5E /* UITableView-Martian.swift in Sources */,
 				48F4DCBE20BC7F7700ACAB5E /* MartianError.swift in Sources */,
 				48F71E6A20BE7BF30026D237 /* Post.swift in Sources */,
@@ -1056,7 +1106,9 @@
 				48F71E6C20BE7BF60026D237 /* Comment.swift in Sources */,
 				48F4DC6720BC78BB00ACAB5E /* StartupProcessService.swift in Sources */,
 				48F4DC6620BC78BB00ACAB5E /* AppearanceCustomisationProcess.swift in Sources */,
+				48ECD55C20C5F1A400DF14BF /* PhotosInteractor.swift in Sources */,
 				48F4DCB320BC7E6600ACAB5E /* TodosRow.swift in Sources */,
+				48ECD55B20C5F1A400DF14BF /* PhotosViewController.swift in Sources */,
 				48F4DCD520BC864B00ACAB5E /* HttpRequestSerializer.swift in Sources */,
 				48F4DC8A20BC7A2300ACAB5E /* TodosContentView.swift in Sources */,
 				48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */,

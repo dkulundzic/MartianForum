@@ -1,5 +1,5 @@
 //
-//  AlbumPhotoCell.swift
+//  PhotoCell.swift
 //  MartianForum
 //
 //  Created by Domagoj Kulundzic on 04/06/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class AlbumPhotoCell: UICollectionViewCell {
+class PhotoCell: UICollectionViewCell {
   typealias ViewModel = (placeholder: UIImage?, thumbnailUrl: URL, imageUrl: URL)
   private let imageView = UIImageView.autolayoutView()
   
@@ -28,15 +28,17 @@ class AlbumPhotoCell: UICollectionViewCell {
   }
 }
 
-extension AlbumPhotoCell {
+extension PhotoCell {
   func update(_ viewModel: ViewModel) {
     imageView.kf.setImage(with: viewModel.thumbnailUrl, placeholder: viewModel.placeholder, options: [.transition(.fade(0.2))])
     imageView.kf.setImage(with: viewModel.imageUrl, placeholder: viewModel.placeholder, options: [.transition(.fade(0.2))])
   }
 }
 
-private extension AlbumPhotoCell {
+private extension PhotoCell {
   func setupViews() {
+    contentView.layer.cornerRadius = 10
+    contentView.clipsToBounds = true
     setupImageView()
   }
   

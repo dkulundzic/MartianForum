@@ -13,7 +13,7 @@ class AlbumPhotosWorker {
     return all(RestfulNetworkService<Album>().getAll(), RestfulNetworkService<Photo>().getAll()).then { albums, photos -> [AlbumPhoto] in
       return albums.compactMap { album in
         let albumPhotos = photos.filter { $0.albumId == album.id }
-        return AlbumPhoto(album: album, photo: albumPhotos)
+        return AlbumPhoto(album: album, photos: albumPhotos)
       }
     }
   }
