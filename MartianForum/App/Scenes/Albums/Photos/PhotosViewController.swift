@@ -35,6 +35,13 @@ class PhotosViewController: UICollectionViewController {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    coordinator.animate(alongsideTransition: { _ in
+      self.collectionView?.collectionViewLayout.invalidateLayout()
+    }, completion: nil)
+  }
 }
 
 // MARK: - Display Logic
@@ -86,7 +93,7 @@ private extension PhotosViewController {
     if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.scrollDirection = .horizontal
       flowLayout.itemSize = CGSize(width: 150, height: 150)
-      flowLayout.minimumInteritemSpacing = 10
+      flowLayout.minimumInteritemSpacing = 25
       flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
   }

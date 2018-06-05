@@ -26,6 +26,13 @@ class PhotoCell: UICollectionViewCell {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    if layer.shadowPath == nil {
+      dropShadow(path: UIBezierPath(rect: bounds), offset: CGSize(width: 1, height: 1))
+    }
+  }
 }
 
 extension PhotoCell {
@@ -39,6 +46,8 @@ private extension PhotoCell {
   func setupViews() {
     contentView.layer.cornerRadius = 10
     contentView.clipsToBounds = true
+    contentView.layer.borderColor = UIColor.white.withAlphaComponent(1).cgColor
+    contentView.layer.borderWidth = 2
     setupImageView()
   }
   

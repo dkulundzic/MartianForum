@@ -9,11 +9,11 @@
 import Foundation
 
 enum AlbumsSection: SectionProtocol {
-  case photo([AlbumsRow])
+  case photo(AlbumHeaderReusableView.ViewModel, [AlbumsRow])
   
   var rows: [AlbumsRow] {
     switch self {
-    case .photo(let rows):
+    case .photo(_, let rows):
       return rows
     }
   }

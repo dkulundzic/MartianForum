@@ -16,6 +16,14 @@ public extension UIView {
 }
 
 public extension UIView {
+  func dropShadow(path: UIBezierPath, color: UIColor = .lightGray, radius: CGFloat = 2, opacity: Float = 0.45, offset: CGSize = CGSize(width: 0, height: 0.8)) {
+    layer.shadowPath = path.cgPath
+    layer.shadowColor = color.cgColor
+    layer.shadowRadius = radius
+    layer.shadowOpacity = opacity
+    layer.shadowOffset = offset
+  }
+  
 	func dropShadow(shadowColor: UIColor = UIColor.lightGray, radius: CGFloat = 2, opacity: Float = 0.45, offset: CGSize = CGSize(width: 0, height: 0.8)) {
 		layer.shadowColor = shadowColor.cgColor
 		layer.shadowOffset = offset

@@ -26,9 +26,9 @@ extension AlbumsDataSource {
 
 private extension AlbumsDataSource {
   func buildSections() {
-    let rows = albumPhotos.enumerated().map {
-      return AlbumsRow.photo(PhotosViewController(index: $0.offset, photos: $0.element.photos))
+    sections = albumPhotos.enumerated().map {
+      let rows: [AlbumsRow] = [.photo(PhotosViewController(index: $0.offset, photos: $0.element.photos))]
+      return AlbumsSection.photo($0.element.album.title, rows)
     }
-    sections.append(.photo(rows))
   }
 }

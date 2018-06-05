@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window.rootViewController = TabBarController()
     window.makeKeyAndVisible()
+    
+    ImageCache.default.maxDiskCacheSize = 10 * 1024 * 1024
     
     StartupProcessService()
       .execute(process: AppearanceCustomisationProcess())

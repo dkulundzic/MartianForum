@@ -37,6 +37,13 @@ class AlbumsViewController: UICollectionViewController {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    coordinator.animate(alongsideTransition: { _ in
+      self.collectionView?.collectionViewLayout.invalidateLayout()
+    }, completion: nil)
+  }
 }
 
 // MARK: - Display Logic
@@ -76,6 +83,19 @@ extension AlbumsViewController {
       return cell
     }
   }
+  
+  override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    guard let section = dataSource.section(at: indexPath.section), kind == UICollectionElementKindSectionHeader else {
+      return UICollectionReusableView()
+    }
+    
+    switch section {
+    case .photo(let viewModel, _):
+      let header: AlbumHeaderReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, forIndexPath: indexPath)
+      header.update(viewModel)
+      return header
+    }
+  }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -84,8 +104,6 @@ extension AlbumsViewController {
     guard let row = dataSource.row(at: indexPath) else {
       return
     }
-    
-//    Logger.debug("Adding a child \"PhotosViewController\" instance.")
     
     if case AlbumsRow.photo(let photosViewController) = row {
       addChildViewController(photosViewController)
@@ -97,8 +115,6 @@ extension AlbumsViewController {
     guard let row = dataSource.row(at: indexPath) else {
       return
     }
-    
-//    Logger.debug("Removing a child \"PhotosViewController\" instance.")
     
     if case AlbumsRow.photo(let photosViewController) = row {
       photosViewController.removeFromParentViewController()
@@ -113,6 +129,10 @@ extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: collectionView.bounds.width, height: 170)
   }
   
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    return CGSize(width: collectionView.bounds.width, height: 60)
+  }
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 10
   }
@@ -123,12 +143,13 @@ private extension AlbumsViewController {
   func setupView() {
     title = "albums_tab_bar_title".localized()
     tabBarItem.image = #imageLiteral(resourceName: "tab_bar_albums_icon")
-    collectionView?.backgroundColor = .white
+    collectionView?.backgroundColor = .martianLightGray
     setupContentView()
   }
   
   func setupContentView() {
     collectionView?.alwaysBounceVertical = true
     collectionView?.register(AlbumCell.self)
+    collectionView?.registerSupplementaryView(AlbumHeaderReusableView.self, kind: UICollectionElementKindSectionHeader)
   }
 }
