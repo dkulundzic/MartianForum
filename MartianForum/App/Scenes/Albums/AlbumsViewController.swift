@@ -16,7 +16,6 @@ protocol AlbumsDisplayLogic: class {
 class AlbumsViewController: UICollectionViewController {
   var interactor: AlbumsBusinessLogic?
   var router: AlbumsRoutingLogic?
-  private let contentView = AlbumsContentView.autolayoutView()
   private let dataSource = AlbumsDataSource()
   
   init(delegate: AlbumsRouterDelegate?) {
@@ -77,8 +76,9 @@ extension AlbumsViewController {
     case .photo(let photosViewController):
       let cell = collectionView.dequeueReusableCell(AlbumCell.self, at: indexPath)
       cell.constrain(viewController: photosViewController)
-      photosViewController.handler = { index, photo in
-        Logger.debug("Tapped photo at section \(indexPath.item), item \(index)")
+      photosViewController.handler = { [weak self] index, photo in
+        collectionView.selectItem(at: IndexPath(item: index, section: indexPath.section), animated: true, scrollPosition: [])
+        self?.router?.navigateToPhoto(photo: photo)
       }
       return cell
     }
@@ -144,6 +144,7 @@ private extension AlbumsViewController {
     title = "albums_tab_bar_title".localized()
     tabBarItem.image = #imageLiteral(resourceName: "tab_bar_albums_icon")
     collectionView?.backgroundColor = .martianLightGray
+    clearsSelectionOnViewWillAppear = true
     setupContentView()
   }
   

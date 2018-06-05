@@ -14,7 +14,6 @@ protocol PhotosDisplayLogic: class {
 
 class PhotosViewController: UICollectionViewController {
   typealias PhotoSelectionHandler = ((Int, Photo) -> Void)?
-  var interactor: PhotosBusinessLogic?
   var handler: PhotoSelectionHandler
   let index: Int
   private let dataSource: PhotosDataSource
@@ -24,11 +23,6 @@ class PhotosViewController: UICollectionViewController {
     self.dataSource = PhotosDataSource(photos: photos)
     self.handler = handler
     super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    let interactor = PhotosInteractor()
-    let presenter = PhotosPresenter()
-    interactor.presenter = presenter
-    presenter.viewController = self
-    self.interactor = interactor
     setupView()
   }
   
@@ -44,9 +38,10 @@ class PhotosViewController: UICollectionViewController {
   }
 }
 
-// MARK: - Display Logic
-extension PhotosViewController: PhotosDisplayLogic {
-  
+extension PhotosViewController {
+  func contentView(at indexPath: IndexPath) -> UIView? {
+    return collectionView?.cellForItem(at: indexPath)?.contentView
+  }
 }
 
 // MARK: - UICollectionViewDataSource
