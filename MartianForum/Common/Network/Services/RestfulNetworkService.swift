@@ -36,10 +36,10 @@ class RestfulNetworkService<Model: Requestable> {
     }
   }
   
-  func update(model: Model) -> Promise<Model> {
+  func update(id: Int, model: Model) -> Promise<Model> {
     return Promise { fullfill, reject in
       HttpRequestDispatcher(baseUrl: URLs.apiURL)
-        .request(using: self.resource.endpoint, requestMethod: .post, body: model, success: {
+        .request(using: "\(self.resource.endpoint)/\(id)", requestMethod: .put, body: model, success: {
           fullfill(model)
         }, failure: reject)
     }

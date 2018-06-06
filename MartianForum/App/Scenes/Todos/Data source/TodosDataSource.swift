@@ -25,7 +25,7 @@ extension TodosDataSource {
     buildSections()
   }
   
-  func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> IndexPath {
+  func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
     return !todo.completed ? updateTodoToCompleted(indexPath: indexPath):
       updateTodoToPending(indexPath: indexPath)
   }
@@ -46,19 +46,19 @@ private extension TodosDataSource {
     sections.append(.completed(TodosSectionHeader.ViewModel(title: "todos_completed_section_header_title".localized()), completedItems))
   }
   
-  func updateTodoToPending(indexPath: IndexPath) -> IndexPath {
+  func updateTodoToPending(indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
     let removedTodo = completedTodos.remove(at: indexPath.item)
     let updatedTodo = Todo(id: removedTodo.id, userId: removedTodo.userId, title: removedTodo.title, completed: false)
     pendingTodos.insert(updatedTodo, at: 0)
     buildSections()
-    return IndexPath(item: 0, section: 0)
+    return (updatedTodo, IndexPath(item: 0, section: 0))
   }
   
-  func updateTodoToCompleted(indexPath: IndexPath) -> IndexPath {
+  func updateTodoToCompleted(indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
     let removedTodo = pendingTodos.remove(at: indexPath.item)
     let updatedTodo = Todo(id: removedTodo.id, userId: removedTodo.userId, title: removedTodo.title, completed: true)
     completedTodos.insert(updatedTodo, at: 0)
     buildSections()
-    return IndexPath(item: 0, section: 1)
+    return (updatedTodo, IndexPath(item: 0, section: 1))
   }
 }

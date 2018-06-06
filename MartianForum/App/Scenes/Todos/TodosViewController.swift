@@ -137,14 +137,16 @@ extension TodosViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Actions
 private extension TodosViewController {
-  func didSelectTodo(_ todo: Todo, from cell: UICollectionViewCell) {
+  func didSelectTodo(_ todo: Todo, from cell: TodosCell) {
     guard let sourceIndexPath = collectionView?.indexPath(for: cell) else { return }
-    let destinationIndexPath = dataSource.updateCompleted(for: todo, at: sourceIndexPath)
+    let updateData = dataSource.updateCompleted(for: todo, at: sourceIndexPath)
+    
+    interactor?.updateTodo(updateData.updatedTodo)
     
     collectionView?.performBatchUpdates {
-      self.collectionView?.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+      self.collectionView?.moveItem(at: sourceIndexPath, to: updateData.destinationIndexPath)
     }.then {
-      self.collectionView?.reloadItems(at: [destinationIndexPath])
+      self.collectionView?.reloadItems(at: [updateData.destinationIndexPath])
     }.then {
       self.collectionView?.reloadData()
     }

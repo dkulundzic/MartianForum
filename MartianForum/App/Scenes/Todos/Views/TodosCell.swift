@@ -39,6 +39,7 @@ extension TodosCell {
   func update(_ viewModel: ViewModel) {
     titleLabel.text = viewModel.title
     actionButton.isSelected = viewModel.completed
+    updateStyling(when: viewModel.completed)
   }
 }
 
@@ -79,5 +80,10 @@ private extension TodosCell {
       $0.leading.equalTo(actionButton.snp.trailing).offset(16)
       $0.top.bottom.trailing.equalToSuperview().inset(16)
     }
+  }
+  
+  func updateStyling(when completed: Bool) {
+    titleLabel.textColor = completed ? .martianGray: .black
+    contentView.backgroundColor = completed ? .martianLightGray: .white
   }
 }

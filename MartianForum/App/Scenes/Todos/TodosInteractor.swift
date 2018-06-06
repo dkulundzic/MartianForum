@@ -10,6 +10,7 @@ import Foundation
 
 protocol TodosBusinessLogic {
   func loadTodos()
+  func updateTodo(_ todo: Todo)
   func createTodo(with title: String)
 }
 
@@ -30,5 +31,13 @@ extension TodosInteractor: TodosBusinessLogic {
   
   func createTodo(with title: String) {
     
+  }
+  
+  func updateTodo(_ todo: Todo) {
+    todosWorker.updateTodo(todo).then { updatedTodo in
+      Logger.debug("Successfully updated the Todo (\(updatedTodo.title)).")
+    }.catch { [weak self] error in
+      self?.presenter?.presentError(NetworkError.wrapped(error))
+    }
   }
 }
