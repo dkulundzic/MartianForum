@@ -13,3 +13,6 @@
 /* Commenting */
 "comment_success_alert_title" = "Comment";
 "comment_success_alert_message" = "Your comment was successfully sent.";
+
+/* Todos */
+"todos_completed_section_header_title" = "Completed";

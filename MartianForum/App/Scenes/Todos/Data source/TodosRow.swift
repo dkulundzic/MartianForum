@@ -9,5 +9,5 @@
 import Foundation
 
 enum TodosRow {
-  
+  case todo(TodosCell.ViewModel, Todo)
 }

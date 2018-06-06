@@ -56,8 +56,9 @@ extension PostsViewController: PostsDisplayLogic {
   
   func displayError(title: String?, message: String?) {
     contentView.tableView.refreshControl?.endRefreshing()
-    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
-    alert.present(on: self)
+    UIAlertController
+      .generic(title: title, message: message)
+      .present(on: self)
   }
 }
 

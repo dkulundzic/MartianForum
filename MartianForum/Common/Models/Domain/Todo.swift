@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct Todo: Requestable {
+struct Todo: Requestable, Equatable {
   static var resource: ResourceProtocol {
     return Resource.todos
+  }
+  
+  static func == (lhs: Todo, rhs: Todo) -> Bool {
+    return lhs.id == rhs.id
   }
   
   let id: Int

@@ -68,8 +68,9 @@ extension CommentingViewController: CommentingDisplayLogic {
   }
   
   func displayError(title: String?, message: String?) {
-    let alert = UIAlertController.generic(title: title, message: message, preferredStyle: .alert)
-    alert.present(on: self)
+    UIAlertController
+      .generic(title: title, message: message)
+      .present(on: self)
   }
 }
 

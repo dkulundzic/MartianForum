@@ -9,11 +9,12 @@
 import Foundation
 
 enum TodosSection: SectionProtocol {
-  case todos([TodosRow])
+  case pending(TodosSectionHeader.ViewModel, [TodosRow])
+  case completed(TodosSectionHeader.ViewModel, [TodosRow])
   
   var rows: [TodosRow] {
     switch self {
-    case .todos(let rows):
+    case .pending(_, let rows), .completed(_, let rows):
       return rows
     }
   }

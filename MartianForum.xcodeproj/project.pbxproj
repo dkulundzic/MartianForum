@@ -20,6 +20,10 @@
 		48CCE53220C06DBB004E90EE /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53120C06DBB004E90EE /* Requestable.swift */; };
 		48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */; };
 		48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */; };
+		48DEF07A20C8484B00EBC236 /* TodosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07920C8484B00EBC236 /* TodosCell.swift */; };
+		48DEF07C20C848B400EBC236 /* TodosInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07B20C848B400EBC236 /* TodosInputCell.swift */; };
+		48DEF07F20C84E7C00EBC236 /* TodosWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07E20C84E7C00EBC236 /* TodosWorker.swift */; };
+		48DEF08120C854E100EBC236 /* TodosSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */; };
 		48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48E2F9B620C25BF70026D6D2 /* Localizable.strings */; };
 		48E2F9B820C25CCD0026D6D2 /* UIAlertController-Martian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */; };
 		48E2F9BB20C265F30026D6D2 /* PostUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2F9BA20C265F30026D6D2 /* PostUser.swift */; };
@@ -143,6 +147,10 @@
 		48CCE53120C06DBB004E90EE /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkServiceTests.swift; sourceTree = "<group>"; };
 		48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAuthSerializer.swift; sourceTree = "<group>"; };
+		48DEF07920C8484B00EBC236 /* TodosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosCell.swift; sourceTree = "<group>"; };
+		48DEF07B20C848B400EBC236 /* TodosInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosInputCell.swift; sourceTree = "<group>"; };
+		48DEF07E20C84E7C00EBC236 /* TodosWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosWorker.swift; sourceTree = "<group>"; };
+		48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosSectionHeader.swift; sourceTree = "<group>"; };
 		48E2F9B520C25BF70026D6D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48E2F9B720C25CCD0026D6D2 /* UIAlertController-Martian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController-Martian.swift"; sourceTree = "<group>"; };
 		48E2F9BA20C265F30026D6D2 /* PostUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUser.swift; sourceTree = "<group>"; };
@@ -381,6 +389,14 @@
 				48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		48DEF07D20C84E7200EBC236 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				48DEF07E20C84E7C00EBC236 /* TodosWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		48E2F9B120C25BDE0026D6D2 /* Localizations */ = {
@@ -644,9 +660,10 @@
 			children = (
 				48F4DCAD20BC7E5400ACAB5E /* Data source */,
 				48F4DC9120BC7A4100ACAB5E /* Views */,
-				48F4DC8620BC7A2300ACAB5E /* TodosPresenter.swift */,
+				48DEF07D20C84E7200EBC236 /* Worker */,
 				48F4DC8720BC7A2300ACAB5E /* TodosRouter.swift */,
 				48F4DC8820BC7A2300ACAB5E /* TodosViewController.swift */,
+				48F4DC8620BC7A2300ACAB5E /* TodosPresenter.swift */,
 				48F4DC8920BC7A2300ACAB5E /* TodosInteractor.swift */,
 			);
 			path = Todos;
@@ -691,6 +708,9 @@
 			isa = PBXGroup;
 			children = (
 				48F4DC8520BC7A2300ACAB5E /* TodosContentView.swift */,
+				48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */,
+				48DEF07920C8484B00EBC236 /* TodosCell.swift */,
+				48DEF07B20C848B400EBC236 /* TodosInputCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1048,6 +1068,7 @@
 				48E2F9CB20C2834D0026D6D2 /* PostDetailsTitleCell.swift in Sources */,
 				48CB205920C092D5005D1A25 /* PostsWorker.swift in Sources */,
 				48F4DCAF20BC7E5D00ACAB5E /* TodosDataSource.swift in Sources */,
+				48DEF08120C854E100EBC236 /* TodosSectionHeader.swift in Sources */,
 				48F4DC8120BC7A1300ACAB5E /* AlbumsPresenter.swift in Sources */,
 				48A227E420C2D9CD004445E8 /* PostDetailsInputCell.swift in Sources */,
 				48F4DCB920BC7F2100ACAB5E /* ResourceProtocol.swift in Sources */,
@@ -1112,6 +1133,7 @@
 				48F71E7020BE7BFE0026D237 /* Album.swift in Sources */,
 				48F4DC7320BC79C700ACAB5E /* PostsPresenter.swift in Sources */,
 				48F4DC6A20BC794C00ACAB5E /* TabBarController.swift in Sources */,
+				48DEF07C20C848B400EBC236 /* TodosInputCell.swift in Sources */,
 				48F4DC8E20BC7A2300ACAB5E /* TodosInteractor.swift in Sources */,
 				48F71E7420BE7C160026D237 /* User.swift in Sources */,
 				48F4DC8C20BC7A2300ACAB5E /* TodosRouter.swift in Sources */,
@@ -1133,7 +1155,9 @@
 				48F4DC8A20BC7A2300ACAB5E /* TodosContentView.swift in Sources */,
 				48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */,
 				48F71E6E20BE7BFA0026D237 /* Todo.swift in Sources */,
+				48DEF07F20C84E7C00EBC236 /* TodosWorker.swift in Sources */,
 				48F4DCC220BC805C00ACAB5E /* NetworkError.swift in Sources */,
+				48DEF07A20C8484B00EBC236 /* TodosCell.swift in Sources */,
 				48E2F9E620C28AB00026D6D2 /* CommentingViewController.swift in Sources */,
 				48F4DCCD20BC82C300ACAB5E /* Resources.swift in Sources */,
 				48F4DC8320BC7A1300ACAB5E /* AlbumsViewController.swift in Sources */,

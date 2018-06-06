@@ -11,3 +11,4 @@ import Foundation
 typealias ArgumentlessCompletion = (() -> Void)?
 typealias SuccessCompletion<T> = ((T) -> Void)?
 typealias FailureCompletion = ((MartianError) -> Void)?
+typealias Action = (() -> Void)?
