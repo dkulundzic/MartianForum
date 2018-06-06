@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Promises
 
 public extension UICollectionView {    
 	func register<T: UICollectionViewCell>(_: T.Type) {
@@ -38,4 +39,14 @@ public extension UICollectionView {
 		}
 		return view
 	}
+}
+
+public extension UICollectionView {
+  func performBatchUpdates(update: @escaping () -> Void) -> Promise<Void> {
+    return Promise<Void> { fulfill, reject in
+      self.performBatchUpdates(update, completion: { completed in
+        completed ? fulfill(()): reject(NetworkError.generic)
+      })
+    }
+  }
 }

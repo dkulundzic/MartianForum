@@ -16,7 +16,7 @@ class TodosCell: UICollectionViewCell {
   
   private let actionButton = UIButton(type: .custom).autolayoutView()
   private let titleLabel = UILabel.autolayoutView()
-  var handler: Action
+  var handler: ((TodosCell) -> Void)?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -44,7 +44,7 @@ extension TodosCell {
 
 private extension TodosCell {
   @objc func actionButtonTapped() {
-    handler?()
+    handler?(self)
   }
 }
 

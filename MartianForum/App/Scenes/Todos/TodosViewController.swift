@@ -87,7 +87,9 @@ extension TodosViewController {
     case .todo(let viewModel, let todo):
       let cell = collectionView.dequeueReusableCell(TodosCell.self, at: indexPath)
       cell.update(viewModel)
-      cell.handler = { [weak self] in self?.didSelectTodo(todo, at: indexPath) }
+      cell.handler = { [weak self] cell in
+        self?.didSelectTodo(todo, from: cell)
+      }
       return cell
     }
   }
@@ -135,13 +137,14 @@ extension TodosViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Actions
 private extension TodosViewController {
-  func didSelectTodo(_ todo: Todo, at indexPath: IndexPath) {
-    let destinationIndexPath = dataSource.updateCompleted(for: todo, at: indexPath)
+  func didSelectTodo(_ todo: Todo, from cell: UICollectionViewCell) {
+    guard let sourceIndexPath = collectionView?.indexPath(for: cell) else { return }
+    let destinationIndexPath = dataSource.updateCompleted(for: todo, at: sourceIndexPath)
     
     collectionView?.performBatchUpdates {
-      self.collectionView?.moveItem(at: indexPath, to: destinationIndexPath)
-    }.then { collectionView in
-      collectionView.reloadItems(at: [destinationIndexPath])
+      self.collectionView?.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+    }.then {
+      self.collectionView?.reloadItems(at: [destinationIndexPath])
     }.then {
       self.collectionView?.reloadData()
     }
@@ -165,19 +168,6 @@ private extension TodosViewController {
     if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.minimumInteritemSpacing = 2
       flowLayout.headerReferenceSize = CGSize(width: itemSize.width, height: 40)
-    }
-  }
-}
-
-extension UICollectionView {
-  func performBatchUpdates(updates: @escaping () -> Void) -> Promise<UICollectionView> {
-    return Promise { fullfill, reject in
-      self.performBatchUpdates(updates) { completed in
-        guard completed else {
-          return reject(NetworkError.custom("Shit happened."))
-        }
-        fullfill(self)
-      }
     }
   }
 }
