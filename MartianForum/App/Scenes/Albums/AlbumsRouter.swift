@@ -23,6 +23,7 @@ class AlbumsRouter {
 // MARK: - Routing Logic
 extension AlbumsRouter: AlbumsRoutingLogic {
   func navigateToPhoto(photo: Photo) {
+    // Improvement: - Produce a nicely animated custom transition for the PhotoViewController.
     let photoViewController = PhotoViewController(photo: photo, delegate: self)
     let navigationController = UINavigationController(rootViewController: photoViewController)
     navigationController.navigationBar.barTintColor = .black
