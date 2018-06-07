@@ -44,8 +44,8 @@ class HttpRequestDispatcher {
 }
 
 extension HttpRequestDispatcher {
-  func request<T: Codable>(using path: String, requestMethod: HttpRequest.Method, body: T, success: ArgumentlessCompletion, failure: FailureCompletion) {
-    request(path: path, requestMethod: requestMethod, body: try? jsonEncoder.encode(body)) { _, response, error in
+  func request<T: Codable>(using path: String, requestMethod: HttpRequest.Method, body: T, success: SuccessCompletion<T>, failure: FailureCompletion) {
+    request(path: path, requestMethod: requestMethod, body: try? jsonEncoder.encode(body)) { data, response, error in
       if let error = error {
         Logger.error("Encountered an error: \"\(error.localizedDescription)\".")
         return self.invokeOnMain {
@@ -70,7 +70,13 @@ extension HttpRequestDispatcher {
       
       Logger.info("\(response.statusCode) \(response.url?.absoluteString ?? "")")
       
-      return self.invokeOnMain { success?() }
+      guard let data = data, let entity = try? self.jsonDecoder.decode(T.self, from: data) else {
+        return self.invokeOnMain {
+          failure?(NetworkError.invalidData(T.self))
+        }
+      }
+      
+      self.invokeOnMain { success?(entity) }
     }
   }
   

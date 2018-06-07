@@ -30,7 +30,12 @@ extension TodosInteractor: TodosBusinessLogic {
   }
   
   func createTodo(with title: String) {
-    
+    let todo = Todo(id: -1, userId: 1, title: title, completed: false)
+    todosWorker.createTodo(todo).then { [weak self] createdTodo in
+      self?.presenter?.presentTodoCreation(createdTodo)
+    }.catch { [weak self] error in
+        self?.presenter?.presentError(NetworkError.wrapped(error))
+    }
   }
   
   func updateTodo(_ todo: Todo) {

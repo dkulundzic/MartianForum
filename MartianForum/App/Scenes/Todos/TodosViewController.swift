@@ -11,6 +11,7 @@ import Promises
 
 protocol TodosDisplayLogic: class {
   func displayTodos(_ todos: [Todo])
+  func displayTodoCreation(_ todo: Todo)
   func displayError(_ title: String?, message: String?)
 }
 
@@ -61,6 +62,13 @@ extension TodosViewController: TodosDisplayLogic {
     collectionView?.reloadData()
   }
   
+  func displayTodoCreation(_ todo: Todo) {
+    let insertionIndexPath = dataSource.addTodo(todo)
+    _ = collectionView?.performBatchUpdates {
+      self.collectionView?.insertItems(at: [insertionIndexPath])
+    }
+  }
+  
   func displayError(_ title: String?, message: String?) {
     UIAlertController
       .generic(title: title, message: message)
@@ -98,7 +106,17 @@ extension TodosViewController {
     guard let section = dataSource.section(at: indexPath.section), kind == UICollectionElementKindSectionHeader else { return UICollectionReusableView() }
     
     switch section {
-    case .pending(let viewModel, _), .completed(let viewModel, _):
+    case .pending(let viewModel, _):
+      let sectionHeader: TodosInputHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, forIndexPath: indexPath)
+      sectionHeader.update(viewModel)
+      sectionHeader.inputHandler = { [weak self] input in
+        self?.dataSource.preserveEnteredText(input)
+      }
+      sectionHeader.returnHandler = { [weak self] textField in
+        self?.didInvokeTodoCreation(textField: textField)
+      }
+      return sectionHeader
+    case .completed(let viewModel, _):
       let sectionHeader: TodosSectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, forIndexPath: indexPath)
       sectionHeader.update(viewModel)
       return sectionHeader
@@ -117,7 +135,7 @@ extension TodosViewController: UICollectionViewDelegateFlowLayout {
     
     switch section {
     case .pending:
-      return .zero
+      return CGSize(width: itemSize.width, height: 60)
     case .completed:
       return CGSize(width: itemSize.width, height: 40)
     }
@@ -151,6 +169,13 @@ private extension TodosViewController {
       self.collectionView?.reloadData()
     }
   }
+  
+  func didInvokeTodoCreation(textField: UITextField) {
+    guard let todoText = textField.text, !todoText.isEmpty else { return }
+    textField.text = nil
+    dataSource.preserveEnteredText(textField.text)
+    interactor?.createTodo(with: todoText)
+  }
 }
 
 // MARK: - Private Methods
@@ -164,8 +189,9 @@ private extension TodosViewController {
   
   func setupCollectionView() {
     collectionView?.alwaysBounceVertical = true
-    collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     collectionView?.register(TodosCell.self)
+    collectionView?.registerSupplementaryView(TodosInputHeader.self, kind: UICollectionElementKindSectionHeader)
     collectionView?.registerSupplementaryView(TodosSectionHeader.self, kind: UICollectionElementKindSectionHeader)
     if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.minimumInteritemSpacing = 2

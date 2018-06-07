@@ -21,4 +21,11 @@ struct Todo: Requestable, Equatable {
   let userId: Int
   let title: String
   let completed: Bool
+  
+  func encode(to encoder: Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(userId, forKey: .userId)
+    try container.encode(title, forKey: .title)
+    try container.encode(completed, forKey: .completed)
+  }
 }

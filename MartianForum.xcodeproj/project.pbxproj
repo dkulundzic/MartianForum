@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4804608820C99451005774D1 /* TodosInputHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608720C99451005774D1 /* TodosInputHeader.swift */; };
+		4804608A20C9A264005774D1 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608920C9A264005774D1 /* Throttler.swift */; };
 		48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48836FC220BC5D8600BDC99E /* AppDelegate.swift */; };
 		48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */; };
 		48836FE020BC5D8600BDC99E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCB20BC5D8600BDC99E /* Info.plist */; };
@@ -21,7 +23,6 @@
 		48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */; };
 		48CCE53920C07CAD004E90EE /* HttpRequestAuthSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */; };
 		48DEF07A20C8484B00EBC236 /* TodosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07920C8484B00EBC236 /* TodosCell.swift */; };
-		48DEF07C20C848B400EBC236 /* TodosInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07B20C848B400EBC236 /* TodosInputCell.swift */; };
 		48DEF07F20C84E7C00EBC236 /* TodosWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF07E20C84E7C00EBC236 /* TodosWorker.swift */; };
 		48DEF08120C854E100EBC236 /* TodosSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */; };
 		48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48E2F9B620C25BF70026D6D2 /* Localizable.strings */; };
@@ -131,6 +132,8 @@
 /* Begin PBXFileReference section */
 		12338E65777B1E001985E489 /* Pods-MartianForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum.debug.xcconfig"; sourceTree = "<group>"; };
 		156D9AF33124ABB1E714C93D /* Pods-MartianForumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4804608720C99451005774D1 /* TodosInputHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosInputHeader.swift; sourceTree = "<group>"; };
+		4804608920C9A264005774D1 /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		48836FC220BC5D8600BDC99E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48836FCB20BC5D8600BDC99E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +151,6 @@
 		48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkServiceTests.swift; sourceTree = "<group>"; };
 		48CCE53820C07CAD004E90EE /* HttpRequestAuthSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAuthSerializer.swift; sourceTree = "<group>"; };
 		48DEF07920C8484B00EBC236 /* TodosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosCell.swift; sourceTree = "<group>"; };
-		48DEF07B20C848B400EBC236 /* TodosInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosInputCell.swift; sourceTree = "<group>"; };
 		48DEF07E20C84E7C00EBC236 /* TodosWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosWorker.swift; sourceTree = "<group>"; };
 		48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosSectionHeader.swift; sourceTree = "<group>"; };
 		48E2F9B520C25BF70026D6D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 			children = (
 				48F4DC9520BC7AD700ACAB5E /* Protocols */,
 				48F4DC6120BC78BB00ACAB5E /* Startup processes */,
+				4804608920C9A264005774D1 /* Throttler.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -709,8 +712,8 @@
 			children = (
 				48F4DC8520BC7A2300ACAB5E /* TodosContentView.swift */,
 				48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */,
+				4804608720C99451005774D1 /* TodosInputHeader.swift */,
 				48DEF07920C8484B00EBC236 /* TodosCell.swift */,
-				48DEF07B20C848B400EBC236 /* TodosInputCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1069,6 +1072,7 @@
 				48CB205920C092D5005D1A25 /* PostsWorker.swift in Sources */,
 				48F4DCAF20BC7E5D00ACAB5E /* TodosDataSource.swift in Sources */,
 				48DEF08120C854E100EBC236 /* TodosSectionHeader.swift in Sources */,
+				4804608820C99451005774D1 /* TodosInputHeader.swift in Sources */,
 				48F4DC8120BC7A1300ACAB5E /* AlbumsPresenter.swift in Sources */,
 				48A227E420C2D9CD004445E8 /* PostDetailsInputCell.swift in Sources */,
 				48F4DCB920BC7F2100ACAB5E /* ResourceProtocol.swift in Sources */,
@@ -1099,6 +1103,7 @@
 				48F71E7220BE7C010026D237 /* Photo.swift in Sources */,
 				48E2F9E520C28AB00026D6D2 /* CommentingRouter.swift in Sources */,
 				48E2F9D620C2838A0026D6D2 /* PostDetailsRow.swift in Sources */,
+				4804608A20C9A264005774D1 /* Throttler.swift in Sources */,
 				48F4DC9720BC7AFA00ACAB5E /* DataSourceProtocol.swift in Sources */,
 				48F4DCAA20BC7DEB00ACAB5E /* AlbumsSection.swift in Sources */,
 				48E2F9E320C28AB00026D6D2 /* CommentingContentView.swift in Sources */,
@@ -1133,7 +1138,6 @@
 				48F71E7020BE7BFE0026D237 /* Album.swift in Sources */,
 				48F4DC7320BC79C700ACAB5E /* PostsPresenter.swift in Sources */,
 				48F4DC6A20BC794C00ACAB5E /* TabBarController.swift in Sources */,
-				48DEF07C20C848B400EBC236 /* TodosInputCell.swift in Sources */,
 				48F4DC8E20BC7A2300ACAB5E /* TodosInteractor.swift in Sources */,
 				48F71E7420BE7C160026D237 /* User.swift in Sources */,
 				48F4DC8C20BC7A2300ACAB5E /* TodosRouter.swift in Sources */,

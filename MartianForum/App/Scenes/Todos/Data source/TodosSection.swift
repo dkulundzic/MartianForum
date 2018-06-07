@@ -9,7 +9,7 @@
 import Foundation
 
 enum TodosSection: SectionProtocol {
-  case pending(TodosSectionHeader.ViewModel, [TodosRow])
+  case pending(TodosInputHeader.ViewModel, [TodosRow])
   case completed(TodosSectionHeader.ViewModel, [TodosRow])
   
   var rows: [TodosRow] {

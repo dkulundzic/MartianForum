@@ -31,7 +31,7 @@ class RestfulNetworkService<Model: Requestable> {
     return Promise { fullfill, reject in
       HttpRequestDispatcher(baseUrl: URLs.apiURL)
         .request(using: self.resource.endpoint, requestMethod: .post, body: model, success: {
-          fullfill(model)
+          fullfill($0)
         }, failure: reject)
     }
   }
@@ -40,7 +40,7 @@ class RestfulNetworkService<Model: Requestable> {
     return Promise { fullfill, reject in
       HttpRequestDispatcher(baseUrl: URLs.apiURL)
         .request(using: "\(self.resource.endpoint)/\(id)", requestMethod: .put, body: model, success: {
-          fullfill(model)
+          fullfill($0)
         }, failure: reject)
     }
   }

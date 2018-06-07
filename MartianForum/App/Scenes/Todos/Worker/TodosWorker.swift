@@ -16,6 +16,10 @@ class TodosWorker {
     return RestfulNetworkService<Todo>().getAll(query: query)
   }
   
+  func createTodo(_ todo: Todo) -> Promise<Todo> {
+    return RestfulNetworkService<Todo>().post(model: todo)
+  }
+  
   func updateTodo(_ todo: Todo) -> Promise<Todo> {
     return RestfulNetworkService<Todo>().update(id: todo.id, model: todo)
   }

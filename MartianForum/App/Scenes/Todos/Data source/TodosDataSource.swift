@@ -10,8 +10,10 @@ import Foundation
 
 class TodosDataSource: DataSourceProtocol {
   var sections = [TodosSection]()
+  private(set) var enteredText: String?
   private var pendingTodos = [Todo]()
   private var completedTodos = [Todo]()
+  private let throttler = Throttler(queue: .main, delay: 0.3)
   
   init() {
     buildSections()
@@ -23,6 +25,20 @@ extension TodosDataSource {
     pendingTodos = todos.filter { !$0.completed }
     completedTodos = todos.filter { $0.completed }
     buildSections()
+  }
+  
+  func addTodo(_ todo: Todo) -> IndexPath {
+    todo.completed ? completedTodos.insert(todo, at: 0):
+      pendingTodos.insert(todo, at: 0)
+    buildSections()
+    return IndexPath(item: 0, section: todo.completed ? 1: 0)
+  }
+  
+  func preserveEnteredText(_ text: String?) {
+    throttler.execute { [weak self] in
+      self?.enteredText = text
+      self?.buildSections()
+    }
   }
   
   func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
@@ -42,7 +58,7 @@ private extension TodosDataSource {
       TodosRow.todo(TodosCell.ViewModel(title: $0.title, completed: $0.completed), $0)
     }
     
-    sections.append(.pending(TodosSectionHeader.ViewModel(title: ""), pendingItems))
+    sections.append(.pending(TodosInputHeader.ViewModel(enteredText: enteredText), pendingItems))
     sections.append(.completed(TodosSectionHeader.ViewModel(title: "todos_completed_section_header_title".localized()), completedItems))
   }
   
