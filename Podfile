@@ -9,8 +9,10 @@ target 'MartianForum' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'PromisesSwift', '~> 1.2.2'
   pod 'Kingfisher', '~> 4.0'
+  pod 'Mockingjay', '2.0.1'
 
   target 'MartianForumTests' do
     inherit! :search_paths
+    pod 'Mockingjay', '2.0.1'
   end
 end

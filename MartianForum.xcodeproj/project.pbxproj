@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4804608820C99451005774D1 /* TodosInputHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608720C99451005774D1 /* TodosInputHeader.swift */; };
 		4804608A20C9A264005774D1 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608920C9A264005774D1 /* Throttler.swift */; };
+		4804608E20C9E6BE005774D1 /* PostsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */; };
+		4804609020C9E6C4005774D1 /* PostsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */; };
+		4804609220C9E6D2005774D1 /* PostsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */; };
 		48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48836FC220BC5D8600BDC99E /* AppDelegate.swift */; };
 		48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */; };
 		48836FE020BC5D8600BDC99E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCB20BC5D8600BDC99E /* Info.plist */; };
@@ -134,6 +137,9 @@
 		156D9AF33124ABB1E714C93D /* Pods-MartianForumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartianForumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4804608720C99451005774D1 /* TodosInputHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosInputHeader.swift; sourceTree = "<group>"; };
 		4804608920C9A264005774D1 /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenterTests.swift; sourceTree = "<group>"; };
+		4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractorTests.swift; sourceTree = "<group>"; };
+		4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerTests.swift; sourceTree = "<group>"; };
 		48836FC220BC5D8600BDC99E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48836FCB20BC5D8600BDC99E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,6 +275,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4804608B20C9E5D3005774D1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4804608C20C9E5E1005774D1 /* Posts */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4804608C20C9E5E1005774D1 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */,
+				4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */,
+				4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		4804609320C9E74B005774D1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		48836FBF20BC5D8600BDC99E /* MartianForum */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +385,8 @@
 		489EA99220BC5A1100A39B77 /* MartianForumTests */ = {
 			isa = PBXGroup;
 			children = (
+				4804609320C9E74B005774D1 /* Mocks */,
+				4804608B20C9E5D3005774D1 /* Scenes */,
 				48CCE53520C07562004E90EE /* Network */,
 				489EA99320BC5A1100A39B77 /* MartianForumTests.swift */,
 				489EA99520BC5A1100A39B77 /* Info.plist */,
@@ -913,6 +946,7 @@
 				489EA98B20BC5A1100A39B77 /* Sources */,
 				489EA98C20BC5A1100A39B77 /* Frameworks */,
 				489EA98D20BC5A1100A39B77 /* Resources */,
+				4C1CA1A6646BCDC95B984397 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -998,6 +1032,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
+		4C1CA1A6646BCDC95B984397 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MartianForumTests/Pods-MartianForumTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C69E6A6A41F1D772E0A3BD24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1042,16 +1096,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MartianForum/Pods-MartianForum-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1173,6 +1231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4804609020C9E6C4005774D1 /* PostsInteractorTests.swift in Sources */,
+				4804608E20C9E6BE005774D1 /* PostsPresenterTests.swift in Sources */,
+				4804609220C9E6D2005774D1 /* PostsViewControllerTests.swift in Sources */,
 				48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */,
 				48CB205620C09087005D1A25 /* HttpRequestQueryBuilderTests.swift in Sources */,
 				489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */,
