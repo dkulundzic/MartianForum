@@ -11,6 +11,7 @@ import Foundation
 protocol TodosPresentationLogic {
   func presentTodos(_ todos: [Todo])
   func presentTodoCreation(_ todo: Todo)
+  func presentTodoUpdate(_ updatedTodo: Todo)
   func presentTodoDeletion(_ todo: Todo)
   func presentError(_ error: MartianError)
 }
@@ -27,6 +28,10 @@ extension TodosPresenter: TodosPresentationLogic {
   
   func presentTodoCreation(_ todo: Todo) {
     viewController?.displayTodoCreation(todo)
+  }
+  
+  func presentTodoUpdate(_ updatedTodo: Todo) {
+    viewController?.displayTodoUpdate(updatedTodo)
   }
   
   func presentTodoDeletion(_ todo: Todo) {

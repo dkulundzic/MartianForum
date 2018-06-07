@@ -38,6 +38,17 @@ extension TodosDataSource {
     return (indexPath.section == 0 ? pendingTodos: completedTodos)[safe: indexPath.item]
   }
   
+  func update(updatedTodo: Todo) -> (sourceIndexPath: IndexPath, destinationIndexPath: IndexPath)? {
+    guard let sourceIndexPath = indexPath(where: { $0.id == updatedTodo.id }) else {
+      return nil
+    }
+    
+    let destinationIndexPath = updatedTodo.completed ? updateTodoToCompleted(indexPath: sourceIndexPath):
+      updateTodoToPending(indexPath: sourceIndexPath)
+    
+    return (sourceIndexPath, destinationIndexPath)
+  }
+  
   func remove(todo: Todo) -> IndexPath? {
     let todos = todo.completed ? completedTodos: pendingTodos
     guard let indexOf = todos.index(of: todo) else { return nil }
@@ -50,11 +61,6 @@ extension TodosDataSource {
     
     buildSections()
     return IndexPath(item: indexOf, section: todo.completed ? 1: 0)
-  }
-  
-  func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
-    return !todo.completed ? updateTodoToCompleted(indexPath: indexPath):
-      updateTodoToPending(indexPath: indexPath)
   }
   
   func preserveEnteredText(_ text: String?) {
@@ -94,19 +100,37 @@ private extension TodosDataSource {
     sections.append(.completed(TodosSectionHeader.ViewModel(title: "todos_completed_section_header_title".localized()), completedItems))
   }
   
-  func updateTodoToPending(indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
+  func updateTodoToPending(indexPath: IndexPath) -> IndexPath {
     let removedTodo = completedTodos.remove(at: indexPath.item)
     let updatedTodo = Todo(id: removedTodo.id, userId: removedTodo.userId, title: removedTodo.title, completed: false)
     pendingTodos.insert(updatedTodo, at: 0)
     buildSections()
-    return (updatedTodo, IndexPath(item: 0, section: 0))
+    return IndexPath(item: 0, section: 0)
   }
   
-  func updateTodoToCompleted(indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
+  func updateTodoToCompleted(indexPath: IndexPath) -> IndexPath {
     let removedTodo = pendingTodos.remove(at: indexPath.item)
     let updatedTodo = Todo(id: removedTodo.id, userId: removedTodo.userId, title: removedTodo.title, completed: true)
     completedTodos.insert(updatedTodo, at: 0)
     buildSections()
-    return (updatedTodo, IndexPath(item: 0, section: 1))
+    return IndexPath(item: 0, section: 1)
+  }
+  
+  func indexPath(for todo: Todo) -> IndexPath? {
+    if let indexOf = pendingTodos.index(of: todo) {
+      return IndexPath(item: indexOf, section: 0)
+    } else if let indexOf = completedTodos.index(of: todo) {
+      return IndexPath(item: indexOf, section: 1)
+    }
+    return nil
+  }
+  
+  func indexPath(where: (Todo) -> Bool) -> IndexPath? {
+    if let indexOf = pendingTodos.index(where: `where`) {
+      return IndexPath(item: indexOf, section: 0)
+    } else if let indexOf = completedTodos.index(where: `where`) {
+      return IndexPath(item: indexOf, section: 1)
+    }
+    return nil
   }
 }

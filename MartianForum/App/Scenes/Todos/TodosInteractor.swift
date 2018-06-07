@@ -40,8 +40,9 @@ extension TodosInteractor: TodosBusinessLogic {
   }
   
   func updateTodo(_ todo: Todo) {
-    todosWorker.updateTodo(todo).then { updatedTodo in
-      Logger.debug("Successfully updated the Todo (\(updatedTodo.title)).")
+    let updatedTodo = Todo(id: todo.id, userId: todo.userId, title: todo.title, completed: !todo.completed)
+    todosWorker.updateTodo(updatedTodo).then { [weak self] updatedTodo in
+      self?.presenter?.presentTodoUpdate(updatedTodo)
     }.catch { [weak self] error in
       self?.presenter?.presentError(NetworkError.wrapped(error))
     }

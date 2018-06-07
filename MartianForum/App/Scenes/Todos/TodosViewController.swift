@@ -12,6 +12,7 @@ import Promises
 protocol TodosDisplayLogic: class {
   func displayTodos(_ todos: [Todo])
   func displayTodoCreation(_ todo: Todo)
+  func displayTodoUpdate(_ updatedTodo: Todo)
   func displayTodoDeletion(_ todo: Todo)
   func displayError(_ title: String?, message: String?)
 }
@@ -73,6 +74,21 @@ extension TodosViewController: TodosDisplayLogic {
       self.collectionView?.insertItems(at: [insertionIndexPath])
       }.then {
         self.collectionView?.reloadData()
+    }
+  }
+  
+  func displayTodoUpdate(_ updatedTodo: Todo) {
+    guard let updateData = dataSource.update(updatedTodo: updatedTodo) else {
+      collectionView?.reloadData()
+      return
+    }
+    
+    collectionView?.performBatchUpdates {
+      self.collectionView?.moveItem(at: updateData.sourceIndexPath, to: updateData.destinationIndexPath)
+    }.then {
+      self.collectionView?.reloadItems(at: [updateData.destinationIndexPath])
+    }.then {
+      self.collectionView?.reloadData()
     }
   }
   
@@ -169,7 +185,6 @@ extension TodosViewController: UICollectionViewDelegateFlowLayout {
     case .pending:
       return UIEdgeInsets(top: dataSource.containsPending() ? 10: 0, left: 0, bottom: 10, right: 0)
     case .completed:
-      let verticalInset = dataSource.containsCompleted() ? 10: 0
       return UIEdgeInsets(top: 10, left: 0, bottom: dataSource.containsCompleted() ? 10: 0, right: 0)
     }
   }
@@ -191,18 +206,7 @@ extension TodosViewController {
 // MARK: - Actions
 private extension TodosViewController {
   func didSelectTodo(_ todo: Todo, from cell: TodosCell) {
-    guard let sourceIndexPath = collectionView?.indexPath(for: cell) else { return }
-    let updateData = dataSource.updateCompleted(for: todo, at: sourceIndexPath)
-    
-    interactor?.updateTodo(updateData.updatedTodo)
-    
-    collectionView?.performBatchUpdates {
-      self.collectionView?.moveItem(at: sourceIndexPath, to: updateData.destinationIndexPath)
-      }.then {
-        self.collectionView?.reloadItems(at: [updateData.destinationIndexPath])
-      }.then {
-        self.collectionView?.reloadData()
-    }
+    interactor?.updateTodo(todo)
   }
   
   func didInvokeTodoCreation(textField: UITextField) {
