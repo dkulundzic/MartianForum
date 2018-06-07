@@ -17,6 +17,7 @@ class TodosCell: UICollectionViewCell {
   private let actionButton = UIButton(type: .custom).autolayoutView()
   private let titleLabel = UILabel.autolayoutView()
   var handler: ((TodosCell) -> Void)?
+  var deletionHandler: Action
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -32,6 +33,10 @@ class TodosCell: UICollectionViewCell {
     if layer.shadowPath == nil {
       dropShadow(path: UIBezierPath(rect: bounds))
     }
+  }
+  
+  @objc override func delete(_ sender: Any?) {
+    deletionHandler?()
   }
 }
 

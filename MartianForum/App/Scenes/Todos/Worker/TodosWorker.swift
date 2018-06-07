@@ -23,4 +23,8 @@ class TodosWorker {
   func updateTodo(_ todo: Todo) -> Promise<Todo> {
     return RestfulNetworkService<Todo>().update(id: todo.id, model: todo)
   }
+  
+  func deleteTodo(_ todo: Todo) -> Promise<Void> {
+    return RestfulNetworkService<Todo>().delete(id: todo.id)
+  }
 }

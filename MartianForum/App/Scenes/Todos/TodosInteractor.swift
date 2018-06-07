@@ -10,8 +10,9 @@ import Foundation
 
 protocol TodosBusinessLogic {
   func loadTodos()
-  func updateTodo(_ todo: Todo)
   func createTodo(with title: String)
+  func updateTodo(_ todo: Todo)
+  func deleteTodo(_ todo: Todo)
 }
 
 class TodosInteractor {
@@ -41,6 +42,14 @@ extension TodosInteractor: TodosBusinessLogic {
   func updateTodo(_ todo: Todo) {
     todosWorker.updateTodo(todo).then { updatedTodo in
       Logger.debug("Successfully updated the Todo (\(updatedTodo.title)).")
+    }.catch { [weak self] error in
+      self?.presenter?.presentError(NetworkError.wrapped(error))
+    }
+  }
+  
+  func deleteTodo(_ todo: Todo) {
+    todosWorker.deleteTodo(todo).then { [weak self] in
+      self?.presenter?.presentTodoDeletion(todo)
     }.catch { [weak self] error in
       self?.presenter?.presentError(NetworkError.wrapped(error))
     }

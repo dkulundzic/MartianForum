@@ -12,6 +12,7 @@ import Promises
 protocol TodosDisplayLogic: class {
   func displayTodos(_ todos: [Todo])
   func displayTodoCreation(_ todo: Todo)
+  func displayTodoDeletion(_ todo: Todo)
   func displayError(_ title: String?, message: String?)
 }
 
@@ -53,19 +54,36 @@ class TodosViewController: UICollectionViewController {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override var canBecomeFirstResponder: Bool {
+    return true
+  }
 }
 
 // MARK: - Display Logic
 extension TodosViewController: TodosDisplayLogic {
   func displayTodos(_ todos: [Todo]) {
-    dataSource.addTodos(todos)
+    dataSource.add(todos: todos)
     collectionView?.reloadData()
   }
   
   func displayTodoCreation(_ todo: Todo) {
-    let insertionIndexPath = dataSource.addTodo(todo)
+    let insertionIndexPath = dataSource.add(todo: todo)
     _ = collectionView?.performBatchUpdates {
       self.collectionView?.insertItems(at: [insertionIndexPath])
+      }.then {
+        self.collectionView?.reloadData()
+    }
+  }
+  
+  func displayTodoDeletion(_ todo: Todo) {
+    guard let deletionIndexPath = dataSource.remove(todo: todo) else {
+      return
+    }
+    _ = collectionView?.performBatchUpdates {
+      self.collectionView?.deleteItems(at: [deletionIndexPath])
+      }.then {
+        self.collectionView?.reloadData()
     }
   }
   
@@ -97,6 +115,9 @@ extension TodosViewController {
       cell.update(viewModel)
       cell.handler = { [weak self] cell in
         self?.didSelectTodo(todo, from: cell)
+      }
+      cell.deletionHandler = { [weak self] in
+        self?.didInvokeTodoDeletion(at: indexPath)
       }
       return cell
     }
@@ -146,10 +167,24 @@ extension TodosViewController: UICollectionViewDelegateFlowLayout {
     
     switch section {
     case .pending:
-      return UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
+      return UIEdgeInsets(top: dataSource.containsPending() ? 10: 0, left: 0, bottom: 10, right: 0)
     case .completed:
-      return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+      let verticalInset = dataSource.containsCompleted() ? 10: 0
+      return UIEdgeInsets(top: 10, left: 0, bottom: dataSource.containsCompleted() ? 10: 0, right: 0)
     }
+  }
+}
+
+// MARK: - UITableViewDelegate
+extension TodosViewController {
+  override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+    return action == #selector(delete(_:))
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) { }
+  
+  override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+    return true
   }
 }
 
@@ -163,10 +198,10 @@ private extension TodosViewController {
     
     collectionView?.performBatchUpdates {
       self.collectionView?.moveItem(at: sourceIndexPath, to: updateData.destinationIndexPath)
-    }.then {
-      self.collectionView?.reloadItems(at: [updateData.destinationIndexPath])
-    }.then {
-      self.collectionView?.reloadData()
+      }.then {
+        self.collectionView?.reloadItems(at: [updateData.destinationIndexPath])
+      }.then {
+        self.collectionView?.reloadData()
     }
   }
   
@@ -175,6 +210,20 @@ private extension TodosViewController {
     textField.text = nil
     dataSource.preserveEnteredText(textField.text)
     interactor?.createTodo(with: todoText)
+  }
+  
+  func didInvokeTodoDeletion(at indexPath: IndexPath) {
+    guard let todo = dataSource.todo(at: indexPath) else {
+      return
+    }
+    
+    let confirmationAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+      self.interactor?.deleteTodo(todo)
+    } // TODO: - Localize
+    
+    UIAlertController
+      .generic(title: "Delete", message: "Are you sure you want delete \"\(todo.title)\"?", actions: [confirmationAction], cancelTitle: "Cancel") // TODO: - Localise
+      .present(on: self)
   }
 }
 
@@ -197,5 +246,9 @@ private extension TodosViewController {
       flowLayout.minimumInteritemSpacing = 2
       flowLayout.headerReferenceSize = CGSize(width: itemSize.width, height: 40)
     }
+  }
+  
+  @objc func test() {
+    
   }
 }

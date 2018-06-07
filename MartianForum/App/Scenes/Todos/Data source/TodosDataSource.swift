@@ -21,17 +21,40 @@ class TodosDataSource: DataSourceProtocol {
 }
 
 extension TodosDataSource {
-  func addTodos(_ todos: [Todo]) {
+  func add(todos: [Todo]) {
     pendingTodos = todos.filter { !$0.completed }
     completedTodos = todos.filter { $0.completed }
     buildSections()
   }
   
-  func addTodo(_ todo: Todo) -> IndexPath {
+  func add(todo: Todo) -> IndexPath {
     todo.completed ? completedTodos.insert(todo, at: 0):
       pendingTodos.insert(todo, at: 0)
     buildSections()
     return IndexPath(item: 0, section: todo.completed ? 1: 0)
+  }
+  
+  func todo(at indexPath: IndexPath) -> Todo? {
+    return (indexPath.section == 0 ? pendingTodos: completedTodos)[safe: indexPath.item]
+  }
+  
+  func remove(todo: Todo) -> IndexPath? {
+    let todos = todo.completed ? completedTodos: pendingTodos
+    guard let indexOf = todos.index(of: todo) else { return nil }
+    
+    if todo.completed {
+      completedTodos.remove(at: indexOf)
+    } else {
+      pendingTodos.remove(at: indexOf)
+    }
+    
+    buildSections()
+    return IndexPath(item: indexOf, section: todo.completed ? 1: 0)
+  }
+  
+  func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
+    return !todo.completed ? updateTodoToCompleted(indexPath: indexPath):
+      updateTodoToPending(indexPath: indexPath)
   }
   
   func preserveEnteredText(_ text: String?) {
@@ -40,10 +63,19 @@ extension TodosDataSource {
       self?.buildSections()
     }
   }
+
+  func containsPending() -> Bool {
+    guard let pendingSection = sections.first else {
+      return false
+    }
+    return !pendingSection.rows.isEmpty
+  }
   
-  func updateCompleted(for todo: Todo, at indexPath: IndexPath) -> (updatedTodo: Todo, destinationIndexPath: IndexPath) {
-    return !todo.completed ? updateTodoToCompleted(indexPath: indexPath):
-      updateTodoToPending(indexPath: indexPath)
+  func containsCompleted() -> Bool {
+    guard let completedSection = sections[safe: 1] else {
+      return false
+    }
+    return !completedSection.rows.isEmpty
   }
 }
 

@@ -67,6 +67,7 @@ private extension TodosInputHeader {
     textField.backgroundColor = .martianLightGray
     textField.borderStyle = .roundedRect
     textField.placeholder = "Add new todo..." // TODO: - Localise
+    textField.returnKeyType = .done
     textField.font = .preferredFont(forTextStyle: .body)
     textField.tintColor = .martianRed
     textField.textColor = .black
