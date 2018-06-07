@@ -11,5 +11,3 @@ import XCTest
 class PostsViewControllerTests: XCTestCase {
   
 }
-
-private 

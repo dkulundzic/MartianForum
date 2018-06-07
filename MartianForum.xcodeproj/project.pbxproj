@@ -12,11 +12,20 @@
 		4804608E20C9E6BE005774D1 /* PostsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */; };
 		4804609020C9E6C4005774D1 /* PostsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */; };
 		4804609220C9E6D2005774D1 /* PostsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */; };
+		48307EB620C9E85000CEC1B9 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307EB520C9E85000CEC1B9 /* Mocker.swift */; };
+		48307EB920C9E88900CEC1B9 /* RestfulStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307EB820C9E88900CEC1B9 /* RestfulStubs.swift */; };
+		48307EBB20C9F0CC00CEC1B9 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 48307EBA20C9F0CC00CEC1B9 /* posts.json */; };
+		48307EC120C9F56C00CEC1B9 /* PostsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307EC020C9F56C00CEC1B9 /* PostsDataSourceTests.swift */; };
+		48307EC420C9F58B00CEC1B9 /* PostsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307EC320C9F58B00CEC1B9 /* PostsMock.swift */; };
+		48307EC720C9F65800CEC1B9 /* UsersMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307EC620C9F65800CEC1B9 /* UsersMock.swift */; };
+		48307EC920C9F68200CEC1B9 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 48307EC820C9F68200CEC1B9 /* users.json */; };
+		48307ECC20C9F6D100CEC1B9 /* PostUserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48307ECB20C9F6D100CEC1B9 /* PostUserMock.swift */; };
+		48307ECE20C9F82600CEC1B9 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 48307EC820C9F68200CEC1B9 /* users.json */; };
+		48307ECF20C9F82600CEC1B9 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 48307EBA20C9F0CC00CEC1B9 /* posts.json */; };
 		48836FDB20BC5D8600BDC99E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48836FC220BC5D8600BDC99E /* AppDelegate.swift */; };
 		48836FDC20BC5D8600BDC99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */; };
 		48836FE020BC5D8600BDC99E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCB20BC5D8600BDC99E /* Info.plist */; };
 		48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48836FCC20BC5D8600BDC99E /* Assets.xcassets */; };
-		489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489EA99320BC5A1100A39B77 /* MartianForumTests.swift */; };
 		48A227E420C2D9CD004445E8 /* PostDetailsInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A227E320C2D9CD004445E8 /* PostDetailsInputCell.swift */; };
 		48CB204F20C07D58005D1A25 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB204E20C07D58005D1A25 /* HttpRequest.swift */; };
 		48CB205420C08D7A005D1A25 /* HttpRequestQueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB205320C08D7A005D1A25 /* HttpRequestQueryBuilder.swift */; };
@@ -140,13 +149,20 @@
 		4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenterTests.swift; sourceTree = "<group>"; };
 		4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractorTests.swift; sourceTree = "<group>"; };
 		4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerTests.swift; sourceTree = "<group>"; };
+		48307EB520C9E85000CEC1B9 /* Mocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
+		48307EB820C9E88900CEC1B9 /* RestfulStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulStubs.swift; sourceTree = "<group>"; };
+		48307EBA20C9F0CC00CEC1B9 /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		48307EC020C9F56C00CEC1B9 /* PostsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSourceTests.swift; sourceTree = "<group>"; };
+		48307EC320C9F58B00CEC1B9 /* PostsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsMock.swift; sourceTree = "<group>"; };
+		48307EC620C9F65800CEC1B9 /* UsersMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMock.swift; sourceTree = "<group>"; };
+		48307EC820C9F68200CEC1B9 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		48307ECB20C9F6D100CEC1B9 /* PostUserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserMock.swift; sourceTree = "<group>"; };
 		48836FC220BC5D8600BDC99E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48836FC520BC5D8600BDC99E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48836FCB20BC5D8600BDC99E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48836FCC20BC5D8600BDC99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		489EA97B20BC5A1000A39B77 /* MartianForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MartianForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489EA98F20BC5A1100A39B77 /* MartianForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MartianForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		489EA99320BC5A1100A39B77 /* MartianForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianForumTests.swift; sourceTree = "<group>"; };
 		489EA99520BC5A1100A39B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A227E320C2D9CD004445E8 /* PostDetailsInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsInputCell.swift; sourceTree = "<group>"; };
 		48CB204E20C07D58005D1A25 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
@@ -287,17 +303,99 @@
 			isa = PBXGroup;
 			children = (
 				4804608D20C9E6BE005774D1 /* PostsPresenterTests.swift */,
+				48307EC020C9F56C00CEC1B9 /* PostsDataSourceTests.swift */,
 				4804608F20C9E6C4005774D1 /* PostsInteractorTests.swift */,
 				4804609120C9E6D2005774D1 /* PostsViewControllerTests.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
 		};
-		4804609320C9E74B005774D1 /* Mocks */ = {
+		48307EB420C9E84100CEC1B9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				48307ECA20C9F6C600CEC1B9 /* Post users */,
+				48307EC520C9F64F00CEC1B9 /* Users */,
+				48307EC220C9F58000CEC1B9 /* Posts */,
+				48307EB520C9E85000CEC1B9 /* Mocker.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		48307EB720C9E88200CEC1B9 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				48307EB820C9E88900CEC1B9 /* RestfulStubs.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		48307EBD20C9F1F200CEC1B9 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				48307ED220C9F94200CEC1B9 /* Network */,
+				48307EB720C9E88200CEC1B9 /* Stubs */,
+				48307EB420C9E84100CEC1B9 /* Mocks */,
+				4804608B20C9E5D3005774D1 /* Scenes */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		48307EBF20C9F3BC00CEC1B9 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				48CCE53520C07562004E90EE /* Network */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		48307EC220C9F58000CEC1B9 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				48307EC320C9F58B00CEC1B9 /* PostsMock.swift */,
+				48307EBA20C9F0CC00CEC1B9 /* posts.json */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		48307EC520C9F64F00CEC1B9 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				48307EC620C9F65800CEC1B9 /* UsersMock.swift */,
+				48307EC820C9F68200CEC1B9 /* users.json */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		48307ECA20C9F6C600CEC1B9 /* Post users */ = {
+			isa = PBXGroup;
+			children = (
+				48307ECB20C9F6D100CEC1B9 /* PostUserMock.swift */,
+			);
+			path = "Post users";
+			sourceTree = "<group>";
+		};
+		48307ED020C9F87400CEC1B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48307ED120C9F87C00CEC1B9 /* Other */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		48307ED120C9F87C00CEC1B9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				489EA99520BC5A1100A39B77 /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		48307ED220C9F94200CEC1B9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		48836FBF20BC5D8600BDC99E /* MartianForum */ = {
@@ -385,20 +483,11 @@
 		489EA99220BC5A1100A39B77 /* MartianForumTests */ = {
 			isa = PBXGroup;
 			children = (
-				4804609320C9E74B005774D1 /* Mocks */,
-				4804608B20C9E5D3005774D1 /* Scenes */,
-				48CCE53520C07562004E90EE /* Network */,
-				489EA99320BC5A1100A39B77 /* MartianForumTests.swift */,
-				489EA99520BC5A1100A39B77 /* Info.plist */,
+				48307EBD20C9F1F200CEC1B9 /* Unit */,
+				48307EBF20C9F3BC00CEC1B9 /* Integration */,
+				48307ED020C9F87400CEC1B9 /* Resources */,
 			);
 			path = MartianForumTests;
-			sourceTree = "<group>";
-		};
-		48CB205020C08D31005D1A25 /* Queries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Queries;
 			sourceTree = "<group>";
 		};
 		48CB205720C092CE005D1A25 /* Worker */ = {
@@ -421,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				48CCE53620C0756F004E90EE /* PostsNetworkServiceTests.swift */,
-				48CB205520C09087005D1A25 /* HttpRequestQueryBuilderTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -791,7 +879,6 @@
 		48F4DCB420BC7EDF00ACAB5E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				48CB205020C08D31005D1A25 /* Queries */,
 				48F4DCB720BC7F1300ACAB5E /* Protocols */,
 				48F71E5C20BE79500026D237 /* Services */,
 				48F4DCD320BC85D900ACAB5E /* Request */,
@@ -1001,6 +1088,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48307ECE20C9F82600CEC1B9 /* users.json in Resources */,
+				48307ECF20C9F82600CEC1B9 /* posts.json in Resources */,
 				48836FE020BC5D8600BDC99E /* Info.plist in Resources */,
 				48E2F9B420C25BF70026D6D2 /* Localizable.strings in Resources */,
 				48836FE120BC5D8600BDC99E /* Assets.xcassets in Resources */,
@@ -1012,6 +1101,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48307EC920C9F68200CEC1B9 /* users.json in Resources */,
+				48307EBB20C9F0CC00CEC1B9 /* posts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1234,9 +1325,14 @@
 				4804609020C9E6C4005774D1 /* PostsInteractorTests.swift in Sources */,
 				4804608E20C9E6BE005774D1 /* PostsPresenterTests.swift in Sources */,
 				4804609220C9E6D2005774D1 /* PostsViewControllerTests.swift in Sources */,
+				48307EC720C9F65800CEC1B9 /* UsersMock.swift in Sources */,
+				48307ECC20C9F6D100CEC1B9 /* PostUserMock.swift in Sources */,
+				48307EB620C9E85000CEC1B9 /* Mocker.swift in Sources */,
+				48307EC120C9F56C00CEC1B9 /* PostsDataSourceTests.swift in Sources */,
+				48307EC420C9F58B00CEC1B9 /* PostsMock.swift in Sources */,
 				48CCE53720C0756F004E90EE /* PostsNetworkServiceTests.swift in Sources */,
+				48307EB920C9E88900CEC1B9 /* RestfulStubs.swift in Sources */,
 				48CB205620C09087005D1A25 /* HttpRequestQueryBuilderTests.swift in Sources */,
-				489EA99420BC5A1100A39B77 /* MartianForumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1419,7 +1515,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MartianForumTests/Info.plist;
+				INFOPLIST_FILE = MartianForumTests/Resources/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1440,7 +1536,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MartianForumTests/Info.plist;
+				INFOPLIST_FILE = MartianForumTests/Resources/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

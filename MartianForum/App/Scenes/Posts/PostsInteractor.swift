@@ -10,7 +10,6 @@ import Foundation
 
 protocol PostsBusinessLogic {
   func loadPosts()
-  func createPost(_ post: Post)
 }
 
 class PostsInteractor {
@@ -28,17 +27,6 @@ extension PostsInteractor: PostsBusinessLogic {
       self?.presenter?.presentNetworkOperation(running: false)
     }.catch { [weak self] in
       self?.presenter?.presentError(NetworkError.wrapped($0))
-    }
-  }
-  
-  func createPost(_ post: Post) {
-    presenter?.presentNetworkOperation(running: true)
-    postsWorker.createPost(post).then { [weak self] in
-      self?.presenter?.presentPost($0, creationResult: true)
-    }.always { [weak self] in
-      self?.presenter?.presentNetworkOperation(running: false)
-    }.catch { [weak self] _ in
-      self?.presenter?.presentPost(post, creationResult: false)
     }
   }
 }

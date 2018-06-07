@@ -20,13 +20,13 @@ class PostsDataSource: DataSourceProtocol {
 extension PostsDataSource {
   func addPosts(_ posts: [PostUser]) {
     self.posts = posts
-    sections.removeAll()
     buildSections()
   }
 }
 
 private extension PostsDataSource {
   func buildSections() {
+    sections.removeAll()
     let rows = posts.map { PostsRow.post(
       PostCell.ViewModel(author: $0.user.username, title: $0.post.title), $0)
     }

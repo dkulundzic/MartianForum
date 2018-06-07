@@ -19,8 +19,4 @@ class PostsWorker {
       }
     }
   }
-  
-  func createPost(_ post: Post) -> Promise<Post> {
-    return RestfulNetworkService<Post>().post(model: post)
-  }
 }
