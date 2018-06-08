@@ -92,7 +92,6 @@
 		48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7D20BC7A1300ACAB5E /* AlbumsRouter.swift */; };
 		48F4DC8320BC7A1300ACAB5E /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7E20BC7A1300ACAB5E /* AlbumsViewController.swift */; };
 		48F4DC8420BC7A1300ACAB5E /* AlbumsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC7F20BC7A1300ACAB5E /* AlbumsInteractor.swift */; };
-		48F4DC8A20BC7A2300ACAB5E /* TodosContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC8520BC7A2300ACAB5E /* TodosContentView.swift */; };
 		48F4DC8B20BC7A2300ACAB5E /* TodosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC8620BC7A2300ACAB5E /* TodosPresenter.swift */; };
 		48F4DC8C20BC7A2300ACAB5E /* TodosRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC8720BC7A2300ACAB5E /* TodosRouter.swift */; };
 		48F4DC8D20BC7A2300ACAB5E /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4DC8820BC7A2300ACAB5E /* TodosViewController.swift */; };
@@ -230,7 +229,6 @@
 		48F4DC7D20BC7A1300ACAB5E /* AlbumsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRouter.swift; sourceTree = "<group>"; };
 		48F4DC7E20BC7A1300ACAB5E /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		48F4DC7F20BC7A1300ACAB5E /* AlbumsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsInteractor.swift; sourceTree = "<group>"; };
-		48F4DC8520BC7A2300ACAB5E /* TodosContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosContentView.swift; sourceTree = "<group>"; };
 		48F4DC8620BC7A2300ACAB5E /* TodosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosPresenter.swift; sourceTree = "<group>"; };
 		48F4DC8720BC7A2300ACAB5E /* TodosRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosRouter.swift; sourceTree = "<group>"; };
 		48F4DC8820BC7A2300ACAB5E /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
@@ -831,7 +829,6 @@
 		48F4DC9120BC7A4100ACAB5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				48F4DC8520BC7A2300ACAB5E /* TodosContentView.swift */,
 				48DEF08020C854E100EBC236 /* TodosSectionHeader.swift */,
 				4804608720C99451005774D1 /* TodosInputHeader.swift */,
 				48DEF07920C8484B00EBC236 /* TodosCell.swift */,
@@ -1305,7 +1302,6 @@
 				48F4DCB320BC7E6600ACAB5E /* TodosRow.swift in Sources */,
 				48ECD55B20C5F1A400DF14BF /* PhotosViewController.swift in Sources */,
 				48F4DCD520BC864B00ACAB5E /* HttpRequestSerializer.swift in Sources */,
-				48F4DC8A20BC7A2300ACAB5E /* TodosContentView.swift in Sources */,
 				48F4DC8220BC7A1300ACAB5E /* AlbumsRouter.swift in Sources */,
 				48F71E6E20BE7BFA0026D237 /* Todo.swift in Sources */,
 				48DEF07F20C84E7C00EBC236 /* TodosWorker.swift in Sources */,

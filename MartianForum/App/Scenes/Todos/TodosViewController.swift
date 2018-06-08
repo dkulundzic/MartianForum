@@ -221,12 +221,16 @@ private extension TodosViewController {
       return
     }
     
-    let confirmationAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+    let confirmationAction = UIAlertAction(title: "default_alert_delete_title".localized(), style: .destructive) { _ in
       self.interactor?.deleteTodo(todo)
-    } // TODO: - Localize
+    }
     
     UIAlertController
-      .generic(title: "Delete", message: "Are you sure you want delete \"\(todo.title)\"?", actions: [confirmationAction], cancelTitle: "Cancel") // TODO: - Localise
+      .generic(
+        title: "default_alert_delete_title".localized(),
+        message: "todos_deletion_alert_message".localized(todo.title),
+        actions: [confirmationAction],
+        cancelTitle: "alert_cancel_title".localized())
       .present(on: self)
   }
 }

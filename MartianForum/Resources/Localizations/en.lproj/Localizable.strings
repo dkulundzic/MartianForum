@@ -1,5 +1,7 @@
 /* General */
 "default_alert_cancel_title" = "Ok";
+"alert_cancel_title" = "Cancel";
+"default_alert_delete_title" = "Delete";
 
 /* Tab bar */
 "posts_tab_bar_title" = "Posts";
@@ -16,3 +18,5 @@
 
 /* Todos */
 "todos_completed_section_header_title" = "Completed";
+"todos_input_placeholder" = "Add new todo...";
+"todos_deletion_alert_message" = "Are you sure you want delete \"%@\"?";

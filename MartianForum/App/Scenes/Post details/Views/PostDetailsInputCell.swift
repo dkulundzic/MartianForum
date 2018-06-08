@@ -29,7 +29,7 @@ private extension PostDetailsInputCell {
   }
   func setupTextField() {
     contentView.addSubview(textField)
-    textField.placeholder = "Add comment..." // TODO: - Localise
+    textField.placeholder = "posts_commenting_placeholder".localized()
     textField.borderStyle = .roundedRect
     textField.textColor = .martianDarkGray
     textField.font = .preferredFont(forTextStyle: .body)

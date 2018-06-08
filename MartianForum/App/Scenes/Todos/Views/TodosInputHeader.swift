@@ -66,7 +66,7 @@ private extension TodosInputHeader {
     addSubview(textField)
     textField.backgroundColor = .martianLightGray
     textField.borderStyle = .roundedRect
-    textField.placeholder = "Add new todo..." // TODO: - Localise
+    textField.placeholder = "todos_input_placeholder".localized()
     textField.returnKeyType = .done
     textField.font = .preferredFont(forTextStyle: .body)
     textField.tintColor = .martianRed

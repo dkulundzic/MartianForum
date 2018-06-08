@@ -43,7 +43,7 @@ extension Logger {
 
 // MARK: - Private Methods
 private extension Logger {
-	static func flush(_ level: LogLevel, message: String, params: Json?=nil, file: String, function: String, line: Int) {
+	static func flush(_ level: LogLevel, message: String, params: Json? = nil, file: String, function: String, line: Int) {
 		let fileName = URL(fileURLWithPath: file).lastPathComponent.components(separatedBy: ".").first ?? ""
 		let validParams = params == nil ? "" : ", params: \(params ?? Json())"
 		
